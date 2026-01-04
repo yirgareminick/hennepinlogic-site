@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hennepin Logic Website
 
-## Getting Started
+A modern, high-converting website for Hennepin Logic - an AI automation agency selling a "60-Second Speed-to-Lead System" to Minneapolis area plumbing companies and water damage restoration/mitigation companies.
 
-First, run the development server:
+## 🚀 Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to see the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+hennepinlogic-site/
+├── docs/                    # Research and copy documentation
+│   ├── research.md          # Market research brief
+│   └── copy.md              # Website copy and strategy
+├── public/                  # Static assets
+├── src/
+│   ├── app/                 # Next.js App Router pages
+│   │   ├── about/           # About page
+│   │   ├── api/contact/     # Contact form API
+│   │   ├── contact/         # Contact page
+│   │   ├── how-it-works/    # How it works page
+│   │   ├── pilot/           # Pilot program page
+│   │   ├── plumbing/        # Plumbing niche landing page
+│   │   ├── privacy/         # Privacy policy
+│   │   ├── restoration/     # Restoration niche landing page
+│   │   ├── terms/           # Terms of service
+│   │   ├── globals.css      # Global styles
+│   │   ├── layout.tsx       # Root layout with SEO
+│   │   ├── page.tsx         # Homepage
+│   │   ├── robots.ts        # Robots.txt generation
+│   │   └── sitemap.ts       # Sitemap generation
+│   └── components/          # Reusable UI components
+├── .env.example             # Environment variable template
+├── CNAME                    # Custom domain for GitHub Pages
+└── package.json
+```
 
-## Learn More
+## 🔧 Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Copy `.env.example` to `.env.local` and configure:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `CONTACT_EMAIL` | Yes | Email for form submissions |
+| `NEXT_PUBLIC_GA_ID` | No | Google Analytics 4 ID |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | No | Plausible Analytics domain |
+| `SLACK_WEBHOOK_URL` | No | Slack webhook for notifications |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | No | Google Search Console |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 Pages
 
-## Deploy on Vercel
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage with hero, system overview, pilot offer |
+| `/plumbing` | Niche landing page for plumbing companies |
+| `/restoration` | Niche landing page for restoration companies |
+| `/how-it-works` | Step-by-step system explanation |
+| `/pilot` | Pilot program details and pricing |
+| `/about` | Company story and local credibility |
+| `/contact` | Contact form and Calendly embed |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Design System
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Font**: Outfit (sans-serif)
+- **Colors**: 
+  - Primary: `#1e40af` (blue)
+  - Accent: `#3b82f6` (bright blue)
+  - Foreground: `#0f172a` (dark navy)
+  - Background: `#ffffff` (white)
+  - Muted: `#f8fafc` (light gray)
+- **Tone**: Confident, practical, local, no hype
+
+## 🔍 SEO Features
+
+- ✅ Unique title tags and meta descriptions per page
+- ✅ OpenGraph tags for social sharing
+- ✅ JSON-LD LocalBusiness schema
+- ✅ Dynamic sitemap generation
+- ✅ Robots.txt configuration
+- ✅ Semantic HTML structure
+- ✅ Internal linking
+- ✅ Mobile-first responsive design
+
+## 📊 Analytics Integration
+
+The site supports two analytics platforms (configure via env vars):
+
+1. **Google Analytics 4**: Set `NEXT_PUBLIC_GA_ID`
+2. **Plausible Analytics**: Set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`
+
+## 📝 Customization
+
+### Updating Copy
+Most copy is defined in page components. For major changes, reference `/docs/copy.md`.
+
+### Adding Testimonials
+Testimonials use placeholder data. Update the `testimonials` array in page components when you have real testimonials.
+
+### Changing Calendly Link
+Currently hardcoded to `https://calendly.com/hennepinlogic-sales`. To change:
+1. Update in `Navigation.tsx`
+2. Update in `CalendlyEmbed.tsx`
+3. Update in each page's CTA
+
+### Adding Case Studies
+The site has placeholder sections for case studies. When ready:
+1. Create `/src/app/case-studies/` directory
+2. Add individual case study pages
+3. Update `Testimonials` component to link to them
+
+## 🚢 Deployment
+
+### Vercel (Recommended)
+```bash
+npm install -g vercel
+vercel
+```
+
+### Other Platforms
+The site is a standard Next.js app and can be deployed to:
+- Netlify
+- AWS Amplify
+- Railway
+- Self-hosted
+
+### GitHub Pages
+The `CNAME` file is configured for `hennepinlogic.xyz`. For GitHub Pages deployment, you'll need to use static export:
+
+```js
+// next.config.ts
+const nextConfig = {
+  output: 'export',
+};
+```
+
+## 📈 Performance Targets
+
+- Lighthouse Performance: 90+
+- Lighthouse Accessibility: 95+
+- Lighthouse SEO: 100
+- First Contentful Paint: <1.5s
+- Largest Contentful Paint: <2.5s
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Fonts**: Google Fonts (Outfit, JetBrains Mono)
+- **Deployment**: Vercel-ready
+
+## 📞 Contact
+
+- **Email**: sales@hennepinlogic.xyz
+- **Website**: https://hennepinlogic.xyz
+- **Location**: Minneapolis, MN
+
+---
+
+© 2026 Hennepin Logic. All rights reserved.
