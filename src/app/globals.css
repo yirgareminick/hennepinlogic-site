@@ -1,26 +1,209 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Color tokens - Professional blue palette */
+  --color-background: #0a0e14;
+  --color-background-secondary: #111827;
+  --color-foreground: #f8fafc;
+  --color-foreground-muted: #94a3b8;
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-secondary: #64748b;
+  --color-accent: #60a5fa;
+  --color-muted: #1e293b;
+  --color-border: #1e293b;
+  --color-success: #22c55e;
+  --color-card: #0f172a;
+  
+  /* Fonts */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  background-color: #0a0e14;
+  color: #f8fafc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Card styles */
+.card-tech {
+  background: linear-gradient(to bottom, #111827, #0f172a);
+  border: 1px solid #1e293b;
+  transition: all 0.3s ease;
+}
+
+.card-tech:hover {
+  border-color: #334155;
+  transform: translateY(-2px);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #f8fafc;
+  font-weight: 500;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #334155;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* Number styling */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.15);
+}
+
+.glow-subtle {
+  box-shadow: 0 0 80px rgba(59, 130, 246, 0.08);
+}
+
+/* Background utilities */
+.bg-grid-fade {
+  background-image: 
+    linear-gradient(to bottom, transparent, #0a0e14),
+    linear-gradient(to right, rgba(30, 41, 59, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.3) 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+}
+
+.bg-radial-top {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12), transparent);
+}
+
+.bg-radial-center {
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+}
+
+/* Utility classes */
+.bg-background { background-color: #0a0e14; }
+.bg-background-secondary { background-color: #111827; }
+.bg-muted { background-color: #1e293b; }
+.bg-card { background-color: #0f172a; }
+.bg-border { background-color: #1e293b; }
+.bg-primary { background-color: #3b82f6; }
+.bg-success { background-color: #22c55e; }
+
+.text-foreground { color: #f8fafc; }
+.text-foreground-muted { color: #94a3b8; }
+.text-primary { color: #3b82f6; }
+.text-accent { color: #60a5fa; }
+.text-success { color: #22c55e; }
+
+.border-border { border-color: #1e293b; }
+.border-primary { border-color: #3b82f6; }
+
+/* Terminal/code styling */
+.terminal-text {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+/* Status indicator with pulse */
+.status-online {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0); }
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #f8fafc 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Fade in animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #1e293b, transparent);
 }
