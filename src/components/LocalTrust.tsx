@@ -1,5 +1,4 @@
 const serviceAreas = [
-  "Minneapolis",
   "St. Paul",
   "Bloomington",
   "Edina",
@@ -23,11 +22,11 @@ export function LocalTrust() {
           <div>
             <p className="text-primary font-medium mb-4 terminal-text">// location.context</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Minneapolis-Based Operation
+              Twin Cities-Based Operation
             </h2>
             <p className="text-lg text-foreground-muted mb-8">
-              We&apos;re based in Minneapolis and work exclusively with Twin Cities service companies. 
-              This focus matters because we understand the seasonal patterns and local market dynamics.
+              We&apos;re based in the Twin Cities metro and work exclusively with area service companies. 
+              This focus matters because we understand seasonal patterns and local market rhythms.
             </p>
 
             {/* Local knowledge points */}
@@ -96,7 +95,7 @@ export function LocalTrust() {
                     </svg>
                   </div>
                   <p className="text-foreground font-medium">Twin Cities Metro</p>
-                  <p className="text-sm text-foreground-muted">Minneapolis–St. Paul</p>
+                  <p className="text-sm text-foreground-muted">Serving the wider metro</p>
                 </div>
               </div>
             </div>

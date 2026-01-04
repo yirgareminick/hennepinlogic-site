@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Hero
-        badge="Minneapolis, MN"
+        badge="Twin Cities Metro"
         eyebrow="Lead Response Automation"
         title="Never Miss Another Lead"
         description="Automated text-back in under 60 seconds. Every missed call, every web form—responded to instantly, 24/7."

@@ -112,9 +112,9 @@ export default function PrivacyPage() {
             <p>
               If you have any questions about this privacy policy, please contact us at:
             </p>
-            <div className="mt-4 p-4 bg-muted rounded-lg">
+              <div className="mt-4 p-4 bg-muted rounded-lg">
               <p><strong>Hennepin Logic</strong></p>
-              <p>Minneapolis, MN</p>
+              <p>Twin Cities metro</p>
               <p>
                 Email:{' '}
                 <a href="mailto:sales@hennepinlogic.xyz" className="text-primary hover:underline">

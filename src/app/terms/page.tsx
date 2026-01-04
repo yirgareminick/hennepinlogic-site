@@ -141,7 +141,7 @@ export default function TermsPage() {
             </p>
             <div className="mt-4 p-4 bg-muted rounded-lg">
               <p><strong>Hennepin Logic</strong></p>
-              <p>Minneapolis, MN</p>
+              <p>Twin Cities metro</p>
               <p>
                 Email:{' '}
                 <a href="mailto:sales@hennepinlogic.xyz" className="text-primary hover:underline">

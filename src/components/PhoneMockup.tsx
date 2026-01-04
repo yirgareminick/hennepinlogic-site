@@ -49,7 +49,7 @@ const defaultConversation: Message[] = [
   },
   {
     type: "incoming",
-    text: "1847 Grand Ave S, Minneapolis 55403",
+    text: "1847 Grand Ave S,\n Minneapolis 55403",
     delay: 17000,
   },
   {
@@ -67,7 +67,7 @@ const defaultConversation: Message[] = [
   },
   {
     type: "incoming",
-    text: "Today would be great if possible. We have kids",
+    text: "Today would be great if that works. We have kids",
     delay: 26000,
   },
   {
@@ -179,6 +179,10 @@ export function PhoneMockup({
 
   return (
     <div className="relative">
+      <div className="absolute inset-0 -z-10 opacity-70">
+        <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-blue-500/30 via-transparent to-black/40 blur-[70px]" />
+        <div className="absolute inset-6 rounded-[2.5rem] border border-white/5 shadow-[0_20px_60px_rgba(2,6,23,0.9)]" />
+      </div>
       <style jsx>{`
         @keyframes typing-dot {
           0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
@@ -201,7 +205,7 @@ export function PhoneMockup({
       `}</style>
       
       {/* Phone frame */}
-      <div className="relative w-[280px] h-[580px] bg-[#000000] rounded-[3rem] p-2 shadow-2xl">
+      <div className="relative w-[280px] h-[580px] bg-gradient-to-b from-white/10 via-black/40 to-black/90 rounded-[3rem] p-2 shadow-[0_25px_90px_rgba(15,23,42,0.55)] border border-blue-500/30 ring-1 ring-blue-500/15 transition duration-500 transform-gpu hover:scale-[0.995] opacity-95">
         {/* Inner screen */}
         <div className="relative w-full h-full bg-[#0a0e14] rounded-[2.5rem] overflow-hidden">
           {/* Dynamic Island */}
@@ -272,8 +276,8 @@ export function PhoneMockup({
               if (msg.type === "outgoing") {
                 return (
                   <div key={index} className="flex justify-start message-appear">
-                    <div className="max-w-[85%] bg-primary text-white px-3 py-2 rounded-2xl rounded-tl-md">
-                      <p className="text-[13px] leading-relaxed">{msg.text}</p>
+                    <div className="inline-flex max-w-[85%] bg-primary/80 border border-primary/40 text-white px-3 py-2 rounded-2xl rounded-tl-md shadow-[0_10px_40px_rgba(59,130,246,0.25)]">
+                      <p className="text-[13px] leading-relaxed break-words whitespace-pre-line">{msg.text}</p>
                     </div>
                   </div>
                 );
@@ -282,8 +286,8 @@ export function PhoneMockup({
               if (msg.type === "incoming") {
                 return (
                   <div key={index} className="flex justify-end message-appear">
-                    <div className="max-w-[85%] bg-[#1e293b] text-white px-3 py-2 rounded-2xl rounded-tr-md">
-                      <p className="text-[13px] leading-relaxed">{msg.text}</p>
+                    <div className="inline-flex max-w-[85%] bg-slate-900/80 border border-blue-500/30 text-white/80 px-3 py-2 rounded-2xl rounded-tr-md shadow-[0_10px_40px_rgba(37,99,235,0.4)]">
+                      <p className="text-[13px] leading-relaxed break-words whitespace-pre-line">{msg.text}</p>
                     </div>
                   </div>
                 );

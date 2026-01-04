@@ -9,7 +9,7 @@ export function Testimonials() {
             Results in Progress
           </h2>
           <p className="text-lg text-foreground-muted max-w-2xl mx-auto">
-            We&apos;re currently running our first pilot programs with Minneapolis plumbing and 
+            We&apos;re currently running our first pilot programs with Twin Cities plumbing and 
             restoration companies. Case studies and testimonials will be added here as pilots complete.
           </p>
         </div>
@@ -56,7 +56,7 @@ export function Testimonials() {
         {/* Note */}
         <div className="mt-12 p-6 rounded-xl bg-muted/30 border border-border text-center">
           <p className="text-foreground-muted">
-            Interested in being a pilot client? We&apos;re taking a limited number of Minneapolis 
+            Interested in being a pilot client? We&apos;re taking a limited number of Twin Cities 
             companies for our initial cohort.{" "}
             <a
               href="https://calendly.com/hennepinlogic-sales"

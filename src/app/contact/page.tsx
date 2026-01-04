@@ -98,7 +98,7 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold text-foreground mb-2">Location</h3>
               <p className="text-sm text-foreground-muted">
-                Minneapolis, MN
+                Twin Cities metro
               </p>
             </div>
           </div>

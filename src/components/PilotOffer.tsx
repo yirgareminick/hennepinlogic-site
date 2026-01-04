@@ -89,9 +89,9 @@ export function PilotOffer({ variant = "default" }: PilotOfferProps) {
           <div className="card-tech rounded-2xl p-8 lg:p-10 glow-primary">
             {/* Header */}
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm mb-4">
                 <span className="status-online" />
-                Minneapolis Pilot
+                Twin Cities Pilot
               </div>
               <div className="text-5xl font-bold text-foreground mb-2">$950</div>
               <p className="text-foreground-muted">One-time setup + 30 days</p>

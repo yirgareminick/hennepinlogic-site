@@ -19,18 +19,17 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://hennepinlogic.xyz'),
   title: {
-    default: "Hennepin Logic | Automated Lead Response for Minneapolis Service Companies",
+    default: "Hennepin Logic | Automated Lead Response for Twin Cities Service Companies",
     template: "%s | Hennepin Logic"
   },
-  description: "Automated lead response infrastructure for Minneapolis plumbing and restoration companies. Sub-60-second response times on missed calls and web leads.",
+  description: "Automated lead response infrastructure for Twin Cities plumbing and restoration companies. Sub-60-second response times on missed calls and web leads.",
   keywords: [
     "lead response automation",
-    "Minneapolis plumber",
+    "Twin Cities plumber",
     "water damage restoration",
     "missed call text back",
     "speed to lead",
-    "service business automation",
-    "Twin Cities"
+    "service business automation"
   ],
   authors: [{ name: "Hennepin Logic" }],
   creator: "Hennepin Logic",
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
     url: "https://hennepinlogic.xyz",
     siteName: "Hennepin Logic",
     title: "Hennepin Logic | Automated Lead Response",
-    description: "Automated lead response infrastructure for Minneapolis service companies. Sub-60-second response times.",
+    description: "Automated lead response infrastructure for Twin Cities service companies. Sub-60-second response times.",
     images: [
       {
         url: "/og-image.png",
@@ -53,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Hennepin Logic | Automated Lead Response",
-    description: "Automated lead response infrastructure for Minneapolis service companies.",
+    description: "Automated lead response infrastructure for Twin Cities service companies.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -82,7 +81,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Hennepin Logic",
-  "description": "Automated lead response infrastructure for Minneapolis plumbing and restoration companies",
+  "description": "Automated lead response infrastructure for Twin Cities plumbing and restoration companies",
   "url": "https://hennepinlogic.xyz",
   "telephone": "(612) 695-1337",
   "email": "sales@hennepinlogic.xyz",
