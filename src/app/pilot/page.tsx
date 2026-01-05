@@ -3,13 +3,13 @@ import Link from "next/link";
 import { FAQ, CTA } from "@/components";
 
 export const metadata: Metadata = {
-  title: "30-Day Pilot Program",
+  title: "30 Day Pilot Program",
   description:
-    "Try the speed-to-lead system for 30 days. $950 one-time fee covers full setup, monitoring, and reporting. No long-term commitment required.",
+    "Try the speed to lead system for 30 days. $950 one time fee covers full setup, monitoring, and reporting. No long term commitment required.",
   openGraph: {
-    title: "30-Day Pilot Program | Hennepin Logic",
+    title: "30 Day Pilot Program | Hennepin Logic",
     description:
-      "Try the speed-to-lead system for 30 days. $950 all-in, no commitment.",
+      "Try the speed to lead system for 30 days. $950 all in, no commitment.",
   },
 };
 
@@ -18,10 +18,10 @@ const inclusions = [
   "All integrations (phone, web, GBP, Facebook)",
   "30 days of 24/7 operation",
   "Emergency escalation rules",
-  "Follow-up sequence configuration",
+  "Follow up sequence configuration",
   "Weekly performance reports",
   "Direct support (Slack/email)",
-  "End-of-pilot review call",
+  "End of pilot review call",
 ];
 
 const pilotFAQs = [
@@ -33,7 +33,7 @@ const pilotFAQs = [
   {
     question: "How quickly can we start?",
     answer:
-      "After the initial call, setup takes 24-48 hours depending on your integrations. Most pilots go live within a week of the first conversation.",
+      "After the initial call, setup takes 24 to 48 hours depending on your integrations. Most pilots go live within a week of the first conversation.",
   },
   {
     question: "Do we need to change our phone system?",
@@ -43,12 +43,12 @@ const pilotFAQs = [
   {
     question: "What's included in the weekly reports?",
     answer:
-      "Lead volume by source, response times, escalation events, follow-up completion rates, and any notable patterns. We'll highlight what's working and any adjustments we recommend.",
+      "Lead volume by source, response times, escalation events, follow up completion rates, and any notable patterns. We'll highlight what's working and any adjustments we recommend.",
   },
   {
-    question: "What determines the post-pilot monthly price?",
+    question: "What determines the post pilot monthly price?",
     answer:
-      "Lead volume and integration complexity. A single-location operation with phone-only integration is on the lower end. Multiple locations, high volume, or complex routing is higher. We'll quote specific pricing during the review call.",
+      "Lead volume and integration complexity. A single location operation with phone only integration is on the lower end. Multiple locations, high volume, or complex routing is higher. We'll quote specific pricing during the review call.",
   },
   {
     question: "Is the $500 credit automatic?",
@@ -71,7 +71,7 @@ export default function PilotPage() {
             <span className="terminal-text">Minneapolis pilot program</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            30-Day Pilot Program
+            30 Day Pilot Program
           </h1>
           <p className="text-xl text-foreground-muted max-w-2xl mx-auto mb-8">
             Full system setup and 30 days of operation. See the results before 
@@ -98,9 +98,9 @@ export default function PilotPage() {
             {/* Pilot card */}
             <div className="card-tech rounded-2xl p-8 glow-primary">
               <div className="mb-6">
-                <p className="text-sm text-primary terminal-text mb-2">30-day pilot</p>
+                <p className="text-sm text-primary terminal-text mb-2">30 day pilot</p>
                 <div className="text-5xl font-bold text-foreground mb-2">$950</div>
-                <p className="text-foreground-muted">One-time fee</p>
+                <p className="text-foreground-muted">One time fee</p>
               </div>
 
               <div className="divider-tech my-6" />
@@ -129,19 +129,18 @@ export default function PilotPage() {
             {/* Post-pilot info */}
             <div className="space-y-6">
               <div className="card-tech rounded-xl p-6">
-                <h3 className="font-semibold text-foreground mb-4">Post-Pilot Pricing</h3>
+                <h3 className="font-semibold text-foreground mb-4">Post Pilot Pricing</h3>
                 <div className="flex items-baseline gap-2 mb-3">
-                  <span className="text-2xl font-bold text-foreground">$1,500–$2,500</span>
+                  <span className="text-2xl font-bold text-foreground">$1,500 to $2,500</span>
                   <span className="text-foreground-muted">/month</span>
                 </div>
                 <p className="text-sm text-foreground-muted mb-4">
                   Monthly rate depends on lead volume, number of integrations, and 
                   routing complexity. We'll provide a specific quote during the 
-                  end-of-pilot review.
+                  end of pilot review.
                 </p>
                 <div className="p-3 rounded-lg bg-success/10 border border-success/20">
                   <div className="flex items-center gap-2 text-success text-sm">
-                    <span>🎁</span>
                     <span><strong>$500 credit</strong> toward month 1 if you convert within 14 days</span>
                   </div>
                 </div>
@@ -156,7 +155,7 @@ export default function PilotPage() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-foreground">Discovery call</p>
-                      <p className="text-xs text-foreground-muted">10 minutes to review fit</p>
+                      <p className="text-xs text-foreground-muted">15 minutes to review fit</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -165,7 +164,7 @@ export default function PilotPage() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-foreground">Setup & testing</p>
-                      <p className="text-xs text-foreground-muted">24-48 hours</p>
+                      <p className="text-xs text-foreground-muted">24 to 48 hours</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -208,8 +207,8 @@ export default function PilotPage() {
             {[
               { metric: "Response time", description: "Average seconds from lead event to first contact" },
               { metric: "Lead volume", description: "Total leads captured across all channels" },
-              { metric: "Escalation events", description: "Emergency triggers and on-call notifications" },
-              { metric: "Follow-up completion", description: "Percentage of sequences completed" },
+              { metric: "Escalation events", description: "Emergency triggers and on call notifications" },
+              { metric: "Follow up completion", description: "Percentage of sequences completed" },
             ].map((item, index) => (
               <div key={index} className="card-tech rounded-xl p-6 text-center">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
@@ -252,7 +251,7 @@ export default function PilotPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-medium text-foreground mb-1">Weeks 2-4</h4>
+                  <h4 className="font-medium text-foreground mb-1">Weeks 2 to 4</h4>
                   <p className="text-sm text-foreground-muted">
                     Regular operation. Weekly reports delivered. You see real data on 
                     response times and lead capture. We're available for questions.
@@ -286,7 +285,7 @@ export default function PilotPage() {
 
       <CTA
         title="Ready to start the pilot?"
-        description="Schedule a 10-minute call to discuss your setup and determine if it's a fit."
+        description="Schedule a 10 minute call to discuss your setup and determine if it's a fit."
         buttonText="Schedule Demo"
       />
     </>

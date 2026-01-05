@@ -23,14 +23,14 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">2. Description of Services</h2>
             <p className="mb-4">
-              Hennepin Logic provides automated lead response and follow-up services for home service businesses, including but not limited to:
+              Hennepin Logic provides automated lead response and follow up services for home service businesses, including but not limited to:
             </p>
             <ul className="list-disc pl-6 mb-4 space-y-2">
               <li>Automated text responses to missed calls</li>
               <li>Web form and social media lead response</li>
               <li>Lead qualification and information capture</li>
               <li>Emergency escalation services</li>
-              <li>Follow-up sequences for unresponsive leads</li>
+              <li>Follow up sequences for unresponsive leads</li>
               <li>Performance reporting and analytics</li>
             </ul>
           </section>
@@ -41,8 +41,8 @@ export default function TermsPage() {
               Our pilot program operates under the following terms:
             </p>
             <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li>The pilot fee is $950 for a 30-day period</li>
-              <li>The pilot fee is non-refundable once services have begun</li>
+              <li>The pilot fee is $950 for a 30 day period</li>
+              <li>The pilot fee is non refundable once services have begun</li>
               <li>If you continue with monthly service after the pilot, $500 of the pilot fee will be credited toward your first month</li>
               <li>There is no obligation to continue after the pilot period</li>
             </ul>
@@ -81,7 +81,7 @@ export default function TermsPage() {
             <ul className="list-disc pl-6 mb-4 space-y-2">
               <li>Obtaining appropriate consent from your customers</li>
               <li>Maintaining records of consent</li>
-              <li>Honoring opt-out requests</li>
+              <li>Honoring opt out requests</li>
               <li>Complying with all applicable federal, state, and local laws</li>
             </ul>
           </section>
@@ -155,4 +155,3 @@ export default function TermsPage() {
     </div>
   );
 }
-

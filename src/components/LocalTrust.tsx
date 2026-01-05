@@ -22,7 +22,7 @@ export function LocalTrust() {
           <div>
             <p className="text-primary font-medium mb-4 terminal-text">// location.context</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Twin Cities-Based Operation
+              Twin Cities Based Operation
             </h2>
             <p className="text-lg text-foreground-muted mb-8">
               We&apos;re based in the Twin Cities metro and work exclusively with area service companies. 
@@ -56,8 +56,8 @@ export function LocalTrust() {
                 <div>
                   <h4 className="font-medium text-foreground mb-1">Local availability</h4>
                   <p className="text-sm text-foreground-muted">
-                    Available for in-person setup assistance and review meetings. 
-                    Not a remote-only vendor from another timezone.
+                    Available for in person setup assistance and review meetings. 
+                    Not a remote only vendor from another timezone.
                   </p>
                 </div>
               </div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Lead Response for Minneapolis Plumbers",
   description:
-    "Automated lead response system built for emergency plumbing companies. Sub-60-second response on missed calls and web leads. Minneapolis-focused.",
+    "Automated lead response system built for emergency plumbing companies. Under 60 second response time on missed calls and web leads. Minneapolis focused.",
   openGraph: {
     title: "Lead Response for Minneapolis Plumbers | Hennepin Logic",
     description:
@@ -40,7 +40,7 @@ const plumbingProblems = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
       </svg>
     ),
-    title: "Inconsistent follow-up",
+    title: "Inconsistent follow up",
     description:
       "Lead comes in, you call back once, no answer. It falls through the cracks. No one tracks whether you tried again the next day.",
   },
@@ -52,7 +52,7 @@ const plumbingProblems = [
     ),
     title: "No urgency filtering",
     description:
-      "Without triage, a dripping faucet and a gas leak get the same response. Or worse—everything goes to voicemail and nothing gets escalated.",
+      "Without triage, a dripping faucet and a gas leak get the same response. Or worse, everything goes to voicemail and nothing gets escalated.",
   },
 ];
 
@@ -60,28 +60,28 @@ const plumbingFAQs = [
   {
     question: "Does this work with my current phone system?",
     answer:
-      "Yes. We integrate via call forwarding or SIP trunk depending on your setup. Works with most providers—Verizon, AT&T, local carriers, VoIP systems. Your number stays the same.",
+      "Yes. We integrate via call forwarding or SIP trunk depending on your setup. Works with most providers, including Verizon, AT&T, local carriers, and VoIP systems. Your number stays the same.",
   },
   {
     question: "What if I have a receptionist?",
     answer:
-      "The system is configurable. You can set it to only handle after-hours and overflow, or run 24/7 as a backup. It only engages when calls go unanswered past your timeout threshold.",
+      "The system is configurable. You can set it to only handle after hours and overflow, or run 24/7 as a backup. It only engages when calls go unanswered past your timeout threshold.",
   },
   {
     question: "How does it know if something is an emergency?",
     answer:
-      "Keyword detection. You define what triggers escalation—'flooding,' 'burst,' 'gas smell,' 'no hot water.' When detected, it immediately notifies your on-call number via SMS and can trigger a voice call.",
+      "Keyword detection. You define what triggers escalation: 'flooding,' 'burst,' 'gas smell,' 'no hot water.' When detected, it immediately notifies your on call number via SMS and can trigger a voice call.",
   },
   {
     question: "What happens to the lead information?",
     answer:
-      "Everything is logged in your dashboard—caller info, service type, address, urgency level, callback preference. You can export to CSV or we can push to your CRM if you have one.",
+      "Everything is logged in your dashboard: caller info, service type, address, urgency level, callback preference. You can export to CSV or we can push to your CRM if you have one.",
   },
 ];
 
 const features = [
   {
-    title: "Missed call text-back",
+    title: "Missed call text back",
     description: "Automatic SMS within 60 seconds of any missed call",
   },
   {
@@ -90,15 +90,15 @@ const features = [
   },
   {
     title: "Emergency escalation",
-    description: "Real-time alerts to on-call tech for urgent issues",
+    description: "Real time alerts to on call tech for urgent issues",
   },
   {
     title: "Lead info capture",
     description: "Service type, address, urgency, callback time",
   },
   {
-    title: "Follow-up sequence",
-    description: "Automated check-ins at 2h, 24h, 48h if no response",
+    title: "Follow up sequence",
+    description: "Automated check ins at 2h, 24h, 48h if no response",
   },
   {
     title: "Weekly reporting",
@@ -113,7 +113,7 @@ export default function PlumbingPage() {
         badge="For Plumbing Companies"
         eyebrow="Minneapolis Emergency Plumbers"
         title="Automated Lead Response for Plumbing Operations"
-        description="A system that catches every missed call, responds instantly, captures job details, and escalates true emergencies to your on-call tech. Built for the operational reality of running a plumbing company."
+        description="A system that catches every missed call, responds instantly, captures job details, and escalates true emergencies to your on call tech. Built for the operational reality of running a plumbing company."
         primaryCta={{
           text: "Schedule Demo",
           href: "https://calendly.com/hennepinlogic-sales",
@@ -137,7 +137,7 @@ export default function PlumbingPage() {
               How It Works for Plumbers
             </h2>
             <p className="text-lg text-foreground-muted">
-              The system is configured specifically for plumbing workflows—emergency keywords, 
+              The system is configured specifically for plumbing workflows, emergency keywords, 
               service type classification, and escalation rules that match how you operate.
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function PlumbingPage() {
           <div className="card-tech rounded-xl p-8">
             <p className="text-primary font-medium mb-4 terminal-text">// example.flow</p>
             <h3 className="text-xl font-bold text-foreground mb-6">
-              Example: After-hours burst pipe call
+              Example: After hours burst pipe call
             </h3>
             
             <div className="space-y-4 terminal-text text-sm">
@@ -205,7 +205,7 @@ export default function PlumbingPage() {
               <div className="flex gap-4 items-start">
                 <span className="text-foreground-muted w-16 flex-shrink-0">11:48 PM</span>
                 <div className="flex-1 p-3 rounded-lg bg-background border border-success/30">
-                  <span className="text-success">escalation:</span> Emergency detected. Notifying on-call: Mike (612) 555-2847
+                  <span className="text-success">escalation:</span> Emergency detected. Notifying on call: Mike (612) 555-2847
                 </div>
               </div>
               <div className="flex gap-4 items-start">
@@ -217,7 +217,7 @@ export default function PlumbingPage() {
             </div>
             
             <p className="text-sm text-foreground-muted mt-6">
-              Total time from missed call to on-call notification: 2 minutes. 
+              Total time from missed call to on call notification: 2 minutes. 
               All information logged and accessible in dashboard.
             </p>
           </div>
@@ -234,7 +234,7 @@ export default function PlumbingPage() {
 
       <CTA
         title="See how it works for plumbing"
-        description="10-minute call to walk through the system with plumbing-specific examples and discuss your current setup."
+        description="10 minute call to walk through the system with plumbing specific examples and discuss your current setup."
       />
     </>
   );

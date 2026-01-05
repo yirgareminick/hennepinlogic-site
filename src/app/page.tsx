@@ -29,9 +29,9 @@ export default function Home() {
         }}
       />
 
-      <ProblemSection />
-
       <SystemSteps />
+
+      <ProblemSection />
 
       <Stats />
 

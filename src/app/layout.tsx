@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: "Hennepin Logic | Automated Lead Response for Twin Cities Service Companies",
     template: "%s | Hennepin Logic"
   },
-  description: "Automated lead response infrastructure for Twin Cities plumbing and restoration companies. Sub-60-second response times on missed calls and web leads.",
+  description: "Automated lead response infrastructure for Twin Cities plumbing and restoration companies. Under 60 second response time on missed calls and web leads.",
   keywords: [
     "lead response automation",
     "Twin Cities plumber",
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     url: "https://hennepinlogic.xyz",
     siteName: "Hennepin Logic",
     title: "Hennepin Logic | Automated Lead Response",
-    description: "Automated lead response infrastructure for Twin Cities service companies. Sub-60-second response times.",
+    description: "Automated lead response infrastructure for Twin Cities service companies. Under 60 second response time.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Hennepin Logic - Automated Lead Response",
+        alt: "Hennepin Logic Automated Lead Response",
       },
     ],
   },
@@ -105,7 +105,7 @@ const jsonLd = {
       "name": "Minnesota"
     }
   ],
-  "priceRange": "$950-$2500"
+  "priceRange": "$950 to $2500"
 };
 
 export default function RootLayout({

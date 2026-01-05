@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Lead Response for Minneapolis Water Damage Restoration",
   description:
-    "Automated lead response system for water damage restoration companies. Sub-60-second response on emergency calls and insurance referrals. Minneapolis-focused.",
+    "Automated lead response system for water damage restoration companies. Under 60 second response time on emergency calls and insurance referrals. Minneapolis focused.",
   openGraph: {
     title: "Lead Response for Minneapolis Restoration | Hennepin Logic",
     description:
@@ -28,7 +28,7 @@ const restorationConversation: Message[] = [
   },
   {
     type: "outgoing",
-    text: "Hi, this is Metro Restoration Services. We received your call—are you dealing with water damage or another emergency?",
+    text: "Hi, this is Metro Restoration Services. We received your call, are you dealing with water damage or another emergency?",
     delay: 2800,
   },
   {
@@ -46,7 +46,7 @@ const restorationConversation: Message[] = [
   },
   {
     type: "outgoing",
-    text: "I understand—that's stressful. Let me get a crew to you ASAP. What's the property address?",
+    text: "I understand, that's stressful. Let me get a crew to you ASAP. What's the property address?",
     delay: 11500,
   },
   {
@@ -108,9 +108,9 @@ const restorationProblems = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: "High-stakes emergencies",
+    title: "High stakes emergencies",
     description:
-      "Water damage gets worse by the hour. A customer with a flooded basement isn't comparison shopping—they're calling down their list until someone answers.",
+      "Water damage gets worse by the hour. A customer with a flooded basement isn't comparison shopping. They're calling down their list until someone answers.",
   },
   {
     icon: (
@@ -161,16 +161,16 @@ const restorationFAQs = [
       "The conversational flow captures: type of damage (water, fire, mold), affected area size, cause if known, property address, insurance status, and preferred inspection time. All configurable.",
   },
   {
-    question: "How does escalation work for after-hours emergencies?",
+    question: "How does escalation work for after hours emergencies?",
     answer:
-      "Keywords like 'flooding,' 'sewage,' 'fire damage' trigger immediate escalation. The system sends SMS to your designated on-call person and can trigger a voice call if there's no response within your timeout window.",
+      "Keywords like 'flooding,' 'sewage,' 'fire damage' trigger immediate escalation. The system sends SMS to your designated on call person and can trigger a voice call if there's no response within your timeout window.",
   },
 ];
 
 const features = [
   {
     title: "Emergency response",
-    description: "Sub-60-second text-back on all missed calls",
+    description: "Under 60 seconds text back on all missed calls",
   },
   {
     title: "Damage classification",
@@ -185,8 +185,8 @@ const features = [
     description: "Property location captured before dispatch",
   },
   {
-    title: "On-call escalation",
-    description: "Real-time alerts for true emergencies",
+    title: "On call escalation",
+    description: "Real time alerts for true emergencies",
   },
   {
     title: "Documentation log",
@@ -201,7 +201,7 @@ export default function RestorationPage() {
         badge="For Restoration Companies"
         eyebrow="Minneapolis Water Damage & Restoration"
         title="Automated Lead Response for Restoration Operations"
-        description="A system that catches every emergency call, classifies the damage type, captures property details, and escalates to your on-call crew. Built for the 24/7 nature of restoration work."
+        description="A system that catches every emergency call, classifies the damage type, captures property details, and escalates to your on call crew. Built for the 24/7 nature of restoration work."
         primaryCta={{
           text: "Schedule Demo",
           href: "https://calendly.com/hennepinlogic-sales",
@@ -227,7 +227,7 @@ export default function RestorationPage() {
               How It Works for Restoration
             </h2>
             <p className="text-lg text-foreground-muted">
-              The system is configured for restoration workflows—damage classification, 
+              The system is configured for restoration workflows, damage classification, 
               insurance routing, and escalation rules that match emergency response operations.
             </p>
           </div>
@@ -323,15 +323,15 @@ export default function RestorationPage() {
               The economics of restoration leads
             </h3>
             <p className="text-foreground-muted mb-6">
-              Average water damage restoration job in Minneapolis: $2,500–$8,000. 
+              Average water damage restoration job in Minneapolis: $2,500 to $8,000. 
               Larger commercial jobs or extensive mold remediation can run $15,000+. 
               A single missed emergency call during a spring flooding event can represent 
-              significant lost revenue—especially when insurance is involved and the 
+              significant lost revenue, especially when insurance is involved and the 
               customer needs immediate response.
             </p>
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <div className="text-2xl font-bold text-primary stat-number">$2.5K–$8K</div>
+                <div className="text-2xl font-bold text-primary stat-number">$2.5K to $8K</div>
                 <div className="text-sm text-foreground-muted">Average job value</div>
               </div>
               <div>
@@ -357,7 +357,7 @@ export default function RestorationPage() {
 
       <CTA
         title="See how it works for restoration"
-        description="10-minute call to walk through the system with restoration-specific examples and discuss your current operations."
+        description="10 minute call to walk through the system with restoration specific examples and discuss your current operations."
       />
     </>
   );

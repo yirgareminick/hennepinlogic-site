@@ -43,10 +43,10 @@ export default function PrivacyPage() {
               Our services involve automated SMS communications to leads on behalf of our clients. We are committed to compliance with the Telephone Consumer Protection Act (TCPA) and related regulations:
             </p>
             <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li>All automated text messages include clear opt-out instructions</li>
+              <li>All automated text messages include clear opt out instructions</li>
               <li>Recipients can reply STOP at any time to discontinue messages</li>
-              <li>We maintain records of consent and opt-out requests</li>
-              <li>We limit the frequency of follow-up messages (typically 2-3 messages maximum)</li>
+              <li>We maintain records of consent and opt out requests</li>
+              <li>We limit the frequency of follow up messages (typically 2 to 3 messages maximum)</li>
               <li>We do not send messages during prohibited hours</li>
             </ul>
           </section>
@@ -128,4 +128,3 @@ export default function PrivacyPage() {
     </div>
   );
 }
-

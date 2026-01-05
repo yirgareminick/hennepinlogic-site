@@ -5,11 +5,11 @@ import { FAQ, CTA } from "@/components";
 export const metadata: Metadata = {
   title: "How the System Works",
   description:
-    "Technical documentation for the 60-second lead response system. Integrations, automation flow, data capture, and escalation logic explained.",
+    "Technical documentation for the 60 second lead response system. Integrations, automation flow, data capture, and escalation logic explained.",
   openGraph: {
     title: "How the System Works | Hennepin Logic",
     description:
-      "Technical documentation for the 60-second lead response system.",
+      "Technical documentation for the 60 second lead response system.",
   },
 };
 
@@ -55,7 +55,7 @@ const escalationRules = [
   {
     trigger: "Emergency keywords",
     examples: "flooding, burst, gas smell, sewage, fire, no heat",
-    action: "Immediate SMS + voice call to on-call",
+    action: "Immediate SMS + voice call to on call",
   },
   {
     trigger: "High urgency response",
@@ -70,7 +70,7 @@ const escalationRules = [
   {
     trigger: "Business hours",
     examples: "Outside configured operating hours",
-    action: "After-hours protocol, escalation if urgent",
+    action: "After hours protocol, escalation if urgent",
   },
 ];
 
@@ -182,7 +182,7 @@ export default function HowItWorksPage() {
             <h2 className="text-2xl font-bold text-foreground mb-4">Integrations</h2>
             <p className="text-foreground-muted max-w-3xl">
               The system connects to your existing channels. No changes to your phone 
-              number or website required—we integrate alongside your current setup.
+              number or website required. We integrate alongside your current setup.
             </p>
           </div>
 
@@ -300,8 +300,8 @@ export default function HowItWorksPage() {
           <div className="space-y-6">
             {[
               { step: "1", title: "Discovery call", duration: "10 min", description: "We discuss your current setup, lead sources, and requirements. Determine if the system is a fit." },
-              { step: "2", title: "Access & configuration", duration: "1-2 hours", description: "You provide access credentials (phone forwarding, form webhooks, API keys). We configure the system." },
-              { step: "3", title: "Testing", duration: "1-2 hours", description: "We run test scenarios—missed calls, form submissions, escalation triggers. Verify everything works." },
+              { step: "2", title: "Access & configuration", duration: "1 to 2 hours", description: "You provide access credentials (phone forwarding, form webhooks, API keys). We configure the system." },
+              { step: "3", title: "Testing", duration: "1 to 2 hours", description: "We run test scenarios, missed calls, form submissions, escalation triggers. Verify everything works." },
               { step: "4", title: "Go live", duration: "Ongoing", description: "System goes active. We monitor the first few days closely and make adjustments as needed." },
             ].map((item, index) => (
               <div key={index} className="flex gap-6 items-start">

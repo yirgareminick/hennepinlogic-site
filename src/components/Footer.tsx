@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const navigation = {
@@ -25,8 +26,14 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center font-bold text-background text-sm">
-                HL
+              <div className="relative w-9 h-9">
+                <Image
+                  src="/hl-logo.png"
+                  alt="Hennepin Logic"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 rounded object-cover"
+                />
               </div>
               <span className="font-semibold text-foreground text-lg">
                 Hennepin Logic
@@ -134,7 +141,7 @@ export function Footer() {
             </div>
           </div>
           <p className="text-xs text-foreground-muted mt-4">
-            All automated messaging follows TCPA guidelines. Opt-out instructions included in every message.
+            All automated messaging follows TCPA guidelines. Opt out instructions included in every message.
           </p>
         </div>
       </div>

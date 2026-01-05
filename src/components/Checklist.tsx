@@ -2,7 +2,7 @@ const features = [
   {
     category: "Inbound Channels",
     items: [
-      "Phone missed-call detection",
+      "Phone missed call detection",
       "Web form webhook integration",
       "Google Business Profile messaging",
       "Facebook lead form sync",
@@ -11,10 +11,10 @@ const features = [
   {
     category: "Response Automation",
     items: [
-      "Sub-60-second SMS response",
+      "Under 60 seconds SMS response",
       "Customizable message templates",
       "Business hours awareness",
-      "Multi-language support available",
+      "Multi language support available",
     ],
   },
   {
@@ -30,18 +30,18 @@ const features = [
     category: "Escalation & Routing",
     items: [
       "Emergency keyword detection",
-      "On-call tech notification",
+      "On call tech notification",
       "SMS + voice escalation",
       "Configurable rules engine",
     ],
   },
   {
-    category: "Follow-Up",
+    category: "Follow Up",
     items: [
       "Automated drip sequences",
       "Configurable intervals",
-      "Response-based branching",
-      "Opt-out handling (TCPA)",
+      "Response based branching",
+      "Opt out handling (TCPA)",
     ],
   },
   {

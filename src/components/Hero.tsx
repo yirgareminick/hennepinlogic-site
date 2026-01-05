@@ -110,7 +110,7 @@ export function Hero({
               <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-foreground-muted">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-500" />
-                  <span>Sub-60s response</span>
+                  <span>Under 60s response</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-blue-500" />

@@ -1,20 +1,20 @@
 const stats = [
   {
     value: "78%",
-    label: "First-responder advantage",
+    label: "First responder advantage",
     detail: "Customers hire the first business to respond",
     source: "InsideSales.com",
   },
   {
     value: "21x",
     label: "Lead qualification rate",
-    detail: "5-min vs 30-min response time comparison",
+    detail: "5 min vs 30 min response time comparison",
     source: "MIT/InsideSales research",
   },
   {
     value: "85%→20%",
     label: "Conversion decay",
-    detail: "Contact rate drops after 30-minute delay",
+    detail: "Contact rate drops after 30 minute delay",
     source: "Lead response studies",
   },
   {
@@ -36,7 +36,7 @@ export function Stats() {
             The Economics of Response Time
           </h2>
           <p className="text-foreground-muted">
-            Speed-to-lead isn&apos;t marketing speak. It&apos;s supported by data from industry research.
+            Speed to lead isn&apos;t marketing speak. It&apos;s supported by data from industry research.
           </p>
         </div>
 

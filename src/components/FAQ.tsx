@@ -22,12 +22,12 @@ const defaultFAQs: FAQItem[] = [
   {
     question: "What happens to leads during business hours?",
     answer:
-      "The system is configurable. You can set it to only handle after-hours and missed calls, or run 24/7 as a backup to your receptionist. Most clients use it as a safety net—it only fires if no one answers within your specified timeout.",
+      "The system is configurable. You can set it to only handle after hours and missed calls, or run 24/7 as a backup to your receptionist. Most clients use it as a safety net. It only fires if no one answers within your specified timeout.",
   },
   {
     question: "Is this compliant with texting regulations?",
     answer:
-      "Yes. All messages include opt-out instructions per TCPA requirements. We only text leads who have initiated contact with your business (inbound leads). We don't do cold outreach or buy lead lists.",
+      "Yes. All messages include opt out instructions per TCPA requirements. We only text leads who have initiated contact with your business (inbound leads). We don't do cold outreach or buy lead lists.",
   },
   {
     question: "What information does the system collect?",
@@ -37,7 +37,7 @@ const defaultFAQs: FAQItem[] = [
   {
     question: "How does emergency escalation work?",
     answer:
-      "You define what counts as an emergency (keywords like 'flooding,' 'burst pipe,' 'gas smell'). When detected, the system immediately sends an SMS to your designated on-call number and can trigger a voice call if no response.",
+      "You define what counts as an emergency (keywords like 'flooding,' 'burst pipe,' 'gas smell'). When detected, the system immediately sends an SMS to your designated on call number and can trigger a voice call if no response.",
   },
   {
     question: "What integrations are supported?",

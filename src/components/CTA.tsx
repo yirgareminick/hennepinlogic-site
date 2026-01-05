@@ -10,7 +10,7 @@ interface CTAProps {
 
 export function CTA({
   title = "Ready to see the system?",
-  description = "Schedule a 10-minute call. We'll walk through how it works and answer any questions about your specific setup.",
+  description = "Schedule a 10 minute call. We'll walk through how it works and answer any questions about your specific setup.",
   buttonText = "Schedule Demo",
   buttonHref = "https://calendly.com/hennepinlogic-sales",
   variant = "default",

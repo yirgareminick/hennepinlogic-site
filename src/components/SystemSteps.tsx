@@ -50,7 +50,7 @@ status: "processing"`,
   {
     number: "04",
     title: "Escalation Logic",
-    description: "If urgency flags trigger (flooding, gas smell, no heat), the system immediately notifies your on-call technician via SMS and call.",
+    description: "If urgency flags trigger (flooding, gas smell, no heat), the system immediately notifies your on call technician via SMS and call.",
     code: `if (lead.urgency === "emergency") {
   notify_oncall(tech.phone);
   escalation_status: "sent"
@@ -63,8 +63,8 @@ status: "processing"`,
   },
   {
     number: "05",
-    title: "Follow-Up Sequence",
-    description: "If the lead doesn't respond, automated follow-ups trigger at 2h, 24h, and 48h intervals. Configurable based on your preferences.",
+    title: "Follow Up Sequence",
+    description: "If the lead doesn't respond, automated follow ups trigger at 2h, 24h, and 48h intervals. Configurable based on your preferences.",
     code: `sequence: [
   { delay: "2h", type: "sms" },
   { delay: "24h", type: "sms" },
@@ -102,7 +102,7 @@ export function SystemSteps() {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10">
           <p className="text-primary font-medium mb-4 terminal-text">// system.architecture</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             How the System Works
@@ -158,7 +158,7 @@ export function SystemSteps() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
-                End-to-end automation
+                End to end automation
               </h3>
               <p className="text-foreground-muted">
                 No manual intervention required. The system runs 24/7 and handles the entire 
