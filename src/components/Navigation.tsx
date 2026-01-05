@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -34,10 +35,15 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center font-semibold text-white text-sm tracking-tight">
-                HL
-              </div>
+            <div className="relative w-9 h-9">
+              <Image
+                src="/hl-logo.png"
+                alt="Hennepin Logic"
+                width={36}
+                height={36}
+                className="h-9 w-9 rounded object-cover"
+                priority
+              />
             </div>
             <span className="font-semibold text-foreground tracking-tight">
               Hennepin Logic

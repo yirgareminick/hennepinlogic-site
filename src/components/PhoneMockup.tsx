@@ -286,7 +286,7 @@ export function PhoneMockup({
               if (msg.type === "incoming") {
                 return (
                   <div key={index} className="flex justify-end message-appear">
-                    <div className="inline-flex max-w-[85%] bg-slate-900/80 border border-blue-500/30 text-white/80 px-3 py-2 rounded-2xl rounded-tr-md shadow-[0_10px_40px_rgba(37,99,235,0.4)]">
+                    <div className="inline-flex max-w-[85%] bg-[#041024]/95 border border-[#1E3A8A]/35 text-white/90 px-3 py-2 rounded-2xl rounded-tr-md shadow-[0_10px_40px_rgba(30,58,138,0.35)]">
                       <p className="text-[13px] leading-relaxed break-words whitespace-pre-line">{msg.text}</p>
                     </div>
                   </div>
