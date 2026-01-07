@@ -60,7 +60,7 @@ const defaultProblems: Problem[] = [
 
 export function ProblemSection({
   title = "The Operational Problem",
-  subtitle = "Common lead capture gaps in plumbing and restoration companies",
+  subtitle = "Common lead capture gaps in service companies",
   problems = defaultProblems,
 }: ProblemSectionProps) {
   return (

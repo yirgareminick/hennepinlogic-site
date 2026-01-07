@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy policy for Hennepin Logic. Learn how we collect, use, and protect your information.',
+  description: 'Privacy policy for Nexly. Learn how we collect, use, and protect your information.',
 };
 
 export default function PrivacyPage() {
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
               If you have any questions about this privacy policy, please contact us at:
             </p>
               <div className="mt-4 p-4 bg-muted rounded-lg">
-              <p><strong>Hennepin Logic</strong></p>
+              <p><strong>Nexly</strong></p>
               <p>Twin Cities metro</p>
               <p>
                 Email:{' '}

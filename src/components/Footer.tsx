@@ -1,12 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "./Logo";
 
 const navigation = {
   product: [
     { name: "How It Works", href: "/how-it-works" },
     { name: "Pilot Program", href: "/pilot" },
-    { name: "For Plumbers", href: "/plumbing" },
-    { name: "For Restoration", href: "/restoration" },
   ],
   company: [
     { name: "About", href: "/about" },
@@ -26,21 +24,13 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="relative w-9 h-9">
-                <Image
-                  src="/hl-logo.png"
-                  alt="Hennepin Logic"
-                  width={36}
-                  height={36}
-                  className="h-9 w-9 rounded object-cover"
-                />
-              </div>
+              <Logo size={36} />
               <span className="font-semibold text-foreground text-lg">
-                Hennepin Logic
+                Nexly
               </span>
             </Link>
             <p className="text-sm text-foreground-muted mb-4 max-w-xs">
-              Automated lead response infrastructure for Twin Cities plumbing and restoration companies.
+              Automated lead response infrastructure for Twin Cities service companies.
             </p>
             <div className="flex items-center gap-2 text-sm text-foreground-muted">
               <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -126,7 +116,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <p className="text-sm text-foreground-muted">
-              © {new Date().getFullYear()} Hennepin Logic. All rights reserved.
+              © {new Date().getFullYear()} Nexly. All rights reserved.
             </p>
             <div className="flex items-center gap-4 text-sm text-foreground-muted">
               {navigation.legal.map((item) => (

@@ -5,9 +5,9 @@ import { CTA } from "@/components";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Hennepin Logic is a Minneapolis based automation company focused on lead response systems for local service businesses.",
+    "Nexly is a Minneapolis based automation company focused on lead response systems for local service businesses.",
   openGraph: {
-    title: "About | Hennepin Logic",
+    title: "About | Nexly",
     description:
       "Minneapolis based automation company focused on lead response systems.",
   },
@@ -23,7 +23,7 @@ export default function AboutPage() {
         
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            About Hennepin Logic
+            About Nexly
           </h1>
           <p className="text-lg text-foreground-muted">
             We build automated lead response infrastructure for Minneapolis service 
@@ -39,8 +39,8 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-foreground mb-4">The approach</h2>
             <div className="space-y-4 text-foreground-muted">
               <p>
-                Plumbing and restoration companies have a specific problem: leads come in 
-                at all hours, and the first business to respond usually wins the job. This 
+                Service operators have a specific problem: leads come in at all hours, 
+                and the first business to respond usually wins the job. This 
                 isn&apos;t a marketing problem. It&apos;s an operations problem.
               </p>
               <p>
@@ -107,33 +107,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why plumbing and restoration */}
+      {/* Who we serve */}
       <section className="py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">Why plumbing and restoration</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Who we serve</h2>
           <div className="space-y-4 text-foreground-muted mb-6">
             <p>
-              These industries have specific characteristics that make speed to lead 
-              especially critical:
+              We work with service teams that need fast, consistent response when 
+              new leads arrive:
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             {[
               {
-                title: "Emergency driven",
-                description: "A burst pipe or flooded basement isn't a comparison shopping situation. Customers call down their list until someone answers.",
+                title: "Urgent response",
+                description: "When the issue is time sensitive, customers call the next company until someone answers.",
               },
               {
-                title: "High job value",
-                description: "Average emergency plumbing call: $400 to $800. Average restoration job: $2,500 to $8,000. Missed calls have real revenue impact.",
+                title: "Revenue at stake",
+                description: "Missed calls and slow follow up translate directly into lost revenue.",
               },
               {
-                title: "24/7 nature",
-                description: "Emergencies happen at 2 AM. You can't be awake all the time, but an automated system can.",
+                title: "Always on demand",
+                description: "Leads arrive outside business hours, and response speed still matters.",
               },
               {
-                title: "Field based work",
-                description: "Your team is on job sites, not at desks. Missed calls pile up while everyone's working.",
+                title: "Distributed teams",
+                description: "Teams are in the field, not at desks. Missed calls pile up while everyone is working.",
               },
             ].map((item, index) => (
               <div key={index} className="card-tech rounded-lg p-5">

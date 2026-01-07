@@ -3,13 +3,13 @@ import { Hero, ProblemSection, FAQ, PilotOffer, CTA } from "@/components";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Lead Response for Minneapolis Plumbers",
+  title: "Lead Response for Service Teams",
   description:
-    "Automated lead response system built for emergency plumbing companies. Under 60 second response time on missed calls and web leads. Minneapolis focused.",
+    "Automated lead response system built for service teams. Under 60 second response time on missed calls and web leads. Minneapolis focused.",
   openGraph: {
-    title: "Lead Response for Minneapolis Plumbers | Hennepin Logic",
+    title: "Lead Response for Service Teams | Nexly",
     description:
-      "Automated lead response system built for emergency plumbing companies.",
+      "Automated lead response system built for service teams.",
   },
 };
 
@@ -20,9 +20,9 @@ const plumbingProblems = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
       </svg>
     ),
-    title: "2 AM burst pipe calls",
+    title: "2 AM urgent calls",
     description:
-      "Emergency calls don't follow business hours. A customer with water flooding their basement isn't leaving a voicemail and waiting until morning.",
+      "Urgent calls don't follow business hours. A customer with a pressing issue isn't leaving a voicemail and waiting until morning.",
   },
   {
     icon: (
@@ -30,7 +30,7 @@ const plumbingProblems = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "On-job distractions",
+    title: "On job distractions",
     description:
       "You're under a sink or in a crawl space. Phone's in the truck. By the time you see the missed call notification, they've moved on.",
   },
@@ -52,7 +52,7 @@ const plumbingProblems = [
     ),
     title: "No urgency filtering",
     description:
-      "Without triage, a dripping faucet and a gas leak get the same response. Or worse, everything goes to voicemail and nothing gets escalated.",
+      "Without triage, low priority and high priority issues get the same response. Or worse, everything goes to voicemail and nothing gets escalated.",
   },
 ];
 
@@ -68,9 +68,9 @@ const plumbingFAQs = [
       "The system is configurable. You can set it to only handle after hours and overflow, or run 24/7 as a backup. It only engages when calls go unanswered past your timeout threshold.",
   },
   {
-    question: "How does it know if something is an emergency?",
+    question: "How does it know if something is urgent?",
     answer:
-      "Keyword detection. You define what triggers escalation: 'flooding,' 'burst,' 'gas smell,' 'no hot water.' When detected, it immediately notifies your on call number via SMS and can trigger a voice call.",
+      "Keyword detection. You define what triggers escalation, like urgent or safety related terms. When detected, it immediately notifies your on call number via SMS and can trigger a voice call.",
   },
   {
     question: "What happens to the lead information?",
@@ -110,10 +110,10 @@ export default function PlumbingPage() {
   return (
     <>
       <Hero
-        badge="For Plumbing Companies"
-        eyebrow="Minneapolis Emergency Plumbers"
-        title="Automated Lead Response for Plumbing Operations"
-        description="A system that catches every missed call, responds instantly, captures job details, and escalates true emergencies to your on call tech. Built for the operational reality of running a plumbing company."
+        badge="For Service Teams"
+        eyebrow="Twin Cities Service Operations"
+        title="Automated Lead Response for Service Operations"
+        description="A system that catches every missed call, responds instantly, captures job details, and escalates urgent issues to your on call team. Built for the operational reality of running a service business."
         primaryCta={{
           text: "Schedule Demo",
           href: "https://calendly.com/hennepinlogic-sales",
@@ -121,23 +121,23 @@ export default function PlumbingPage() {
       />
 
       <ProblemSection
-        title="Why Plumbing Leads Slip Away"
-        subtitle="The specific challenges of lead capture in emergency plumbing"
+        title="Why Leads Slip Away"
+        subtitle="Common lead capture challenges for service teams"
         problems={plumbingProblems}
       />
 
-      {/* How it works for plumbers */}
+      {/* How it works for service teams */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-grid-fade opacity-20" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <p className="text-primary font-medium mb-4 terminal-text">// plumbing.workflow</p>
+            <p className="text-primary font-medium mb-4 terminal-text">// service.workflow</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              How It Works for Plumbers
+              How It Works for Service Teams
             </h2>
             <p className="text-lg text-foreground-muted">
-              The system is configured specifically for plumbing workflows, emergency keywords, 
+              The system is configured for service workflows, urgency keywords, 
               service type classification, and escalation rules that match how you operate.
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function PlumbingPage() {
           <div className="card-tech rounded-xl p-8">
             <p className="text-primary font-medium mb-4 terminal-text">// example.flow</p>
             <h3 className="text-xl font-bold text-foreground mb-6">
-              Example: After hours burst pipe call
+              Example: After hours urgent request
             </h3>
             
             <div className="space-y-4 terminal-text text-sm">
@@ -227,14 +227,14 @@ export default function PlumbingPage() {
       <PilotOffer variant="compact" />
 
       <FAQ
-        title="Questions from Plumbers"
-        subtitle="Technical and operational details for plumbing company owners"
+        title="Questions from Service Teams"
+        subtitle="Technical and operational details for service company owners"
         items={plumbingFAQs}
       />
 
       <CTA
-        title="See how it works for plumbing"
-        description="10 minute call to walk through the system with plumbing specific examples and discuss your current setup."
+        title="See how it works for service teams"
+        description="10 minute call to walk through the system with service specific examples and discuss your current setup."
       />
     </>
   );

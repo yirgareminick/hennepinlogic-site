@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Try the speed to lead system for 30 days. $950 one time fee covers full setup, monitoring, and reporting. No long term commitment required.",
   openGraph: {
-    title: "30 Day Pilot Program | Hennepin Logic",
+    title: "30 Day Pilot Program | Nexly",
     description:
       "Try the speed to lead system for 30 days. $950 all in, no commitment.",
   },

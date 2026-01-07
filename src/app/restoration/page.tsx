@@ -4,17 +4,17 @@ import type { Message } from "@/components";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Lead Response for Minneapolis Water Damage Restoration",
+  title: "Lead Response for Emergency Response Teams",
   description:
-    "Automated lead response system for water damage restoration companies. Under 60 second response time on emergency calls and insurance referrals. Minneapolis focused.",
+    "Automated lead response system for urgent response teams. Under 60 second response time on emergency calls and partner referrals. Minneapolis focused.",
   openGraph: {
-    title: "Lead Response for Minneapolis Restoration | Hennepin Logic",
+    title: "Lead Response for Emergency Response Teams | Nexly",
     description:
-      "Automated lead response system for water damage restoration companies.",
+      "Automated lead response system for urgent response teams.",
   },
 };
 
-// Restoration-specific phone conversation
+// Response-specific phone conversation
 const restorationConversation: Message[] = [
   {
     type: "event",
@@ -28,7 +28,7 @@ const restorationConversation: Message[] = [
   },
   {
     type: "outgoing",
-    text: "Hi, this is Metro Restoration Services. We received your call, are you dealing with water damage or another emergency?",
+    text: "Hi, this is Metro Response Services. We received your call, are you dealing with an urgent issue?",
     delay: 2800,
   },
   {
@@ -46,7 +46,7 @@ const restorationConversation: Message[] = [
   },
   {
     type: "outgoing",
-    text: "I understand, that's stressful. Let me get a crew to you ASAP. What's the property address?",
+    text: "I understand, that's stressful. Let me get a team to you ASAP. What's the property address?",
     delay: 11500,
   },
   {
@@ -64,7 +64,7 @@ const restorationConversation: Message[] = [
   },
   {
     type: "outgoing",
-    text: "Got it. Is this a residential home? And do you know if you have homeowner's insurance?",
+    text: "Got it. Is this a residential home? And do you know if this is covered by a service plan?",
     delay: 21000,
   },
   {
@@ -82,7 +82,7 @@ const restorationConversation: Message[] = [
   },
   {
     type: "outgoing",
-    text: "Perfect. I'm dispatching our emergency team now. They'll call within 10 minutes with an ETA. We'll also help with the insurance claim paperwork.",
+    text: "Perfect. I'm dispatching our emergency team now. They'll call within 10 minutes with an ETA. We'll also help with the documentation.",
     delay: 30500,
   },
   {
@@ -110,7 +110,7 @@ const restorationProblems = [
     ),
     title: "High stakes emergencies",
     description:
-      "Water damage gets worse by the hour. A customer with a flooded basement isn't comparison shopping. They're calling down their list until someone answers.",
+      "Urgent issues get worse by the hour. Customers are not comparison shopping. They're calling down their list until someone answers.",
   },
   {
     icon: (
@@ -118,9 +118,9 @@ const restorationProblems = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
       </svg>
     ),
-    title: "Insurance referral timing",
+    title: "Partner referral timing",
     description:
-      "When insurance sends a referral, response time determines whether you get the job. First to respond, first to schedule inspection.",
+      "When a partner sends a referral, response time determines whether you get the job. First to respond, first to schedule a visit.",
   },
   {
     icon: (
@@ -140,30 +140,30 @@ const restorationProblems = [
     ),
     title: "Missing documentation",
     description:
-      "Initial customer contact details get lost between the call and the first site visit. Important for insurance paperwork.",
+      "Initial customer contact details get lost between the call and the first visit. Important for documentation.",
   },
 ];
 
 const restorationFAQs = [
   {
-    question: "Can the system handle insurance referral calls?",
+    question: "Can the system handle partner referral calls?",
     answer:
-      "Yes. You can configure specific response flows for insurance company numbers or referral sources. These can be prioritized and routed differently than general inquiries.",
+      "Yes. You can configure specific response flows for partner numbers or referral sources. These can be prioritized and routed differently than general inquiries.",
   },
   {
-    question: "How does it integrate with our job management software?",
+    question: "How does it integrate with our operations software?",
     answer:
-      "We can push captured lead data to most job management systems via API or webhook. Common integrations include PSA, Next Gear, Restoration Manager, and generic CRM platforms.",
+      "We can push captured lead data to most job management systems via API or webhook. Common integrations include PSA platforms and generic CRM systems.",
   },
   {
-    question: "What information does it capture for water damage calls?",
+    question: "What information does it capture for urgent calls?",
     answer:
-      "The conversational flow captures: type of damage (water, fire, mold), affected area size, cause if known, property address, insurance status, and preferred inspection time. All configurable.",
+      "The conversational flow captures: issue type, affected area, cause if known, property address, service window, and priority. All configurable.",
   },
   {
     question: "How does escalation work for after hours emergencies?",
     answer:
-      "Keywords like 'flooding,' 'sewage,' 'fire damage' trigger immediate escalation. The system sends SMS to your designated on call person and can trigger a voice call if there's no response within your timeout window.",
+      "Keywords like 'urgent,' 'no heat,' or 'safety issue' trigger immediate escalation. The system sends SMS to your designated on call person and can trigger a voice call if there's no response within your timeout window.",
   },
 ];
 
@@ -173,12 +173,12 @@ const features = [
     description: "Under 60 seconds text back on all missed calls",
   },
   {
-    title: "Damage classification",
-    description: "Automated capture of damage type and scope",
+    title: "Issue classification",
+    description: "Automated capture of issue type and scope",
   },
   {
-    title: "Insurance routing",
-    description: "Specific flows for insurance referral calls",
+    title: "Partner routing",
+    description: "Specific flows for partner referral calls",
   },
   {
     title: "Address verification",
@@ -190,7 +190,7 @@ const features = [
   },
   {
     title: "Documentation log",
-    description: "Full transcript for insurance paperwork",
+    description: "Full transcript for records and follow up",
   },
 ];
 
@@ -198,37 +198,37 @@ export default function RestorationPage() {
   return (
     <>
       <Hero
-        badge="For Restoration Companies"
-        eyebrow="Minneapolis Water Damage & Restoration"
-        title="Automated Lead Response for Restoration Operations"
-        description="A system that catches every emergency call, classifies the damage type, captures property details, and escalates to your on call crew. Built for the 24/7 nature of restoration work."
+        badge="For Emergency Response Teams"
+        eyebrow="Twin Cities Urgent Response"
+        title="Automated Lead Response for Emergency Operations"
+        description="A system that catches every emergency call, classifies the issue, captures property details, and escalates to your on call team. Built for the 24/7 nature of urgent response work."
         primaryCta={{
           text: "Schedule Demo",
           href: "https://calendly.com/hennepinlogic-sales",
         }}
         phoneConversation={restorationConversation}
-        phoneBusinessName="Metro Restoration Services"
+        phoneBusinessName="Metro Response Services"
       />
 
       <ProblemSection
-        title="Why Restoration Leads Require Speed"
-        subtitle="The specific challenges of lead capture in water damage restoration"
+        title="Why Urgent Leads Require Speed"
+        subtitle="The specific challenges of lead capture for urgent response teams"
         problems={restorationProblems}
       />
 
-      {/* How it works for restoration */}
+      {/* How it works for emergency response */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-grid-fade opacity-20" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <p className="text-primary font-medium mb-4 terminal-text">// restoration.workflow</p>
+            <p className="text-primary font-medium mb-4 terminal-text">// response.workflow</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              How It Works for Restoration
+              How It Works for Emergency Response
             </h2>
             <p className="text-lg text-foreground-muted">
-              The system is configured for restoration workflows, damage classification, 
-              insurance routing, and escalation rules that match emergency response operations.
+              The system is configured for response workflows, issue classification, 
+              partner routing, and escalation rules that match emergency operations.
             </p>
           </div>
 
@@ -270,32 +270,32 @@ export default function RestorationPage() {
           <div className="card-tech rounded-xl p-8">
             <p className="text-primary font-medium mb-4 terminal-text">// example.flow</p>
             <h3 className="text-xl font-bold text-foreground mb-6">
-              Example: Insurance referral for water damage
+              Example: Partner referral for an urgent issue
             </h3>
             
             <div className="space-y-4 terminal-text text-sm">
               <div className="flex gap-4 items-start">
                 <span className="text-foreground-muted w-16 flex-shrink-0">3:22 PM</span>
                 <div className="flex-1 p-3 rounded-lg bg-background border border-border">
-                  <span className="text-primary">event:</span> Missed call from State Farm Claims (800-xxx-xxxx)
+                  <span className="text-primary">event:</span> Missed call from Partner Dispatch (800-xxx-xxxx)
                 </div>
               </div>
               <div className="flex gap-4 items-start">
                 <span className="text-foreground-muted w-16 flex-shrink-0">3:22 PM</span>
                 <div className="flex-1 p-3 rounded-lg bg-background border border-border">
-                  <span className="text-primary">match:</span> Insurance referral detected. Priority routing enabled.
+                  <span className="text-primary">match:</span> Partner referral detected. Priority routing enabled.
                 </div>
               </div>
               <div className="flex gap-4 items-start">
                 <span className="text-foreground-muted w-16 flex-shrink-0">3:22 PM</span>
                 <div className="flex-1 p-3 rounded-lg bg-background border border-border">
-                  <span className="text-primary">action:</span> SMS sent: &quot;This is [Your Company] responding to your referral. What&apos;s the property address?&quot;
+                  <span className="text-primary">action:</span> SMS sent: &quot;This is [Your Company] responding to your referral. What&apos;s the address?&quot;
                 </div>
               </div>
               <div className="flex gap-4 items-start">
                 <span className="text-foreground-muted w-16 flex-shrink-0">3:24 PM</span>
                 <div className="flex-1 p-3 rounded-lg bg-background border border-border">
-                  <span className="text-primary">capture:</span> Address: 892 Summit Ave, St. Paul | Damage: Basement flooding | Claim: #SF-892847
+                  <span className="text-primary">capture:</span> Address: 892 Summit Ave, St. Paul | Issue: Basement flooding | Ref: #SF-892847
                 </div>
               </div>
               <div className="flex gap-4 items-start">
@@ -308,7 +308,7 @@ export default function RestorationPage() {
             
             <p className="text-sm text-foreground-muted mt-6">
               Total time from missed call to dispatch notification: 3 minutes. 
-              Insurance claim number captured for documentation.
+              Reference number captured for documentation.
             </p>
           </div>
         </div>
@@ -320,14 +320,13 @@ export default function RestorationPage() {
           <div className="card-tech rounded-xl p-8 glow-primary">
             <p className="text-primary font-medium mb-4 terminal-text">// context.economics</p>
             <h3 className="text-xl font-bold text-foreground mb-4">
-              The economics of restoration leads
+              The economics of urgent leads
             </h3>
             <p className="text-foreground-muted mb-6">
-              Average water damage restoration job in Minneapolis: $2,500 to $8,000. 
-              Larger commercial jobs or extensive mold remediation can run $15,000+. 
-              A single missed emergency call during a spring flooding event can represent 
-              significant lost revenue, especially when insurance is involved and the 
-              customer needs immediate response.
+              Average urgent service job in Minneapolis: $2,500 to $8,000. 
+              Larger commercial jobs or complex remediation can run $15,000+. 
+              A single missed emergency call during a high volume event can represent 
+              significant lost revenue, especially when the customer needs immediate response.
             </p>
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
@@ -336,7 +335,7 @@ export default function RestorationPage() {
               </div>
               <div>
                 <div className="text-2xl font-bold text-primary stat-number">24/7</div>
-                <div className="text-sm text-foreground-muted">Emergency nature</div>
+                <div className="text-sm text-foreground-muted">Urgent nature</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-primary stat-number">~60s</div>
@@ -350,14 +349,14 @@ export default function RestorationPage() {
       <PilotOffer variant="compact" />
 
       <FAQ
-        title="Questions from Restoration Companies"
-        subtitle="Technical and operational details for restoration company owners"
+        title="Questions from Emergency Response Teams"
+        subtitle="Technical and operational details for response team owners"
         items={restorationFAQs}
       />
 
       <CTA
-        title="See how it works for restoration"
-        description="10 minute call to walk through the system with restoration specific examples and discuss your current operations."
+        title="See how it works for emergency response"
+        description="10 minute call to walk through the system with response specific examples and discuss your current operations."
       />
     </>
   );

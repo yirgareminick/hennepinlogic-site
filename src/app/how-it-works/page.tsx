@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Technical documentation for the 60 second lead response system. Integrations, automation flow, data capture, and escalation logic explained.",
   openGraph: {
-    title: "How the System Works | Hennepin Logic",
+    title: "How the System Works | Nexly",
     description:
       "Technical documentation for the 60 second lead response system.",
   },
@@ -133,7 +133,7 @@ export default function HowItWorksPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
-                <div className="text-sm font-medium text-foreground">Hennepin Logic</div>
+                <div className="text-sm font-medium text-foreground">Nexly</div>
                 <div className="text-xs text-foreground-muted">Process & Route</div>
               </div>
 

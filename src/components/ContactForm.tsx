@@ -139,9 +139,9 @@ export function ContactForm() {
           className="w-full px-4 py-3 rounded-lg bg-muted border border-border text-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
         >
           <option value="">Select your business type</option>
-          <option value="plumbing">Plumbing</option>
-          <option value="restoration">Water Damage Restoration</option>
-          <option value="both">Both</option>
+          <option value="field-services">Field services</option>
+          <option value="home-services">Home services</option>
+          <option value="professional-services">Professional services</option>
           <option value="other">Other (describe in message)</option>
         </select>
       </div>

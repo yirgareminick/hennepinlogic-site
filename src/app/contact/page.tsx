@@ -4,11 +4,11 @@ import { ContactForm, CalendlyEmbed } from "@/components";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Hennepin Logic. Schedule a demo or send us a message about your lead response needs.",
+    "Get in touch with Nexly. Schedule a demo or send us a message about your lead response needs.",
   openGraph: {
-    title: "Contact | Hennepin Logic",
+    title: "Contact | Nexly",
     description:
-      "Get in touch with Hennepin Logic. Schedule a demo or send us a message.",
+      "Get in touch with Nexly. Schedule a demo or send us a message.",
   },
 };
 

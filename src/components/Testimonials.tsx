@@ -9,8 +9,8 @@ export function Testimonials() {
             Results in Progress
           </h2>
           <p className="text-lg text-foreground-muted max-w-2xl mx-auto">
-            We&apos;re currently running our first pilot programs with Twin Cities plumbing and 
-            restoration companies. Case studies and testimonials will be added here as pilots complete.
+            We&apos;re currently running our first pilot programs with Twin Cities service companies. 
+            Case studies and testimonials will be added here as pilots complete.
           </p>
         </div>
 
@@ -30,7 +30,7 @@ export function Testimonials() {
               <div className="h-3 w-4/6 bg-muted/50 rounded" />
             </div>
             <p className="text-sm text-foreground-muted mt-4 italic">
-              Plumbing company pilot in progress
+              Service company pilot in progress
             </p>
           </div>
 
@@ -48,7 +48,7 @@ export function Testimonials() {
               <div className="h-3 w-4/6 bg-muted/50 rounded" />
             </div>
             <p className="text-sm text-foreground-muted mt-4 italic">
-              Restoration company pilot in progress
+              Service company pilot in progress
             </p>
           </div>
         </div>

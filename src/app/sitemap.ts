@@ -13,18 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/plumbing`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/restoration`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/how-it-works`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -62,4 +50,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
-

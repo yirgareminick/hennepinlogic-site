@@ -25,7 +25,7 @@ export function LocalTrust() {
               Twin Cities Based Operation
             </h2>
             <p className="text-lg text-foreground-muted mb-8">
-              We&apos;re based in the Twin Cities metro and work exclusively with area service companies. 
+              We&apos;re based in the Twin Cities metro and work with area service companies. 
               This focus matters because we understand seasonal patterns and local market rhythms.
             </p>
 
@@ -71,8 +71,8 @@ export function LocalTrust() {
                 <div>
                   <h4 className="font-medium text-foreground mb-1">Focused clientele</h4>
                   <p className="text-sm text-foreground-muted">
-                    We only work with plumbing and restoration companies. 
-                    No generic &quot;works for any business&quot; approach.
+                    We focus on service operators with time sensitive lead flow. 
+                    No generic one size fits all approach.
                   </p>
                 </div>
               </div>

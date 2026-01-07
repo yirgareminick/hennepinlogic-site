@@ -13,4 +13,5 @@ export { ProblemSection } from './ProblemSection';
 export { ContactForm } from './ContactForm';
 export { CalendlyEmbed } from './CalendlyEmbed';
 export { PhoneMockup } from './PhoneMockup';
+export { Logo, LogoMark } from './Logo';
 export type { Message } from './PhoneMockup';

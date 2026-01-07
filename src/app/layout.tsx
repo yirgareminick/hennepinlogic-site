@@ -19,39 +19,38 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://hennepinlogic.xyz'),
   title: {
-    default: "Hennepin Logic | Automated Lead Response for Twin Cities Service Companies",
-    template: "%s | Hennepin Logic"
+    default: "Nexly | Automated Lead Response for Twin Cities Service Companies",
+    template: "%s | Nexly"
   },
-  description: "Automated lead response infrastructure for Twin Cities plumbing and restoration companies. Under 60 second response time on missed calls and web leads.",
+  description: "Automated lead response infrastructure for Twin Cities service companies. Under 60 second response time on missed calls and web leads.",
   keywords: [
     "lead response automation",
-    "Twin Cities plumber",
-    "water damage restoration",
     "missed call text back",
     "speed to lead",
-    "service business automation"
+    "service business automation",
+    "local service companies"
   ],
-  authors: [{ name: "Hennepin Logic" }],
-  creator: "Hennepin Logic",
+  authors: [{ name: "Nexly" }],
+  creator: "Nexly",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://hennepinlogic.xyz",
-    siteName: "Hennepin Logic",
-    title: "Hennepin Logic | Automated Lead Response",
+    siteName: "Nexly",
+    title: "Nexly | Automated Lead Response",
     description: "Automated lead response infrastructure for Twin Cities service companies. Under 60 second response time.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Hennepin Logic Automated Lead Response",
+        alt: "Nexly Automated Lead Response",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hennepin Logic | Automated Lead Response",
+    title: "Nexly | Automated Lead Response",
     description: "Automated lead response infrastructure for Twin Cities service companies.",
     images: ["/og-image.png"],
   },
@@ -70,9 +69,9 @@ export const metadata: Metadata = {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 
@@ -80,8 +79,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Hennepin Logic",
-  "description": "Automated lead response infrastructure for Twin Cities plumbing and restoration companies",
+  "name": "Nexly",
+  "description": "Automated lead response infrastructure for Twin Cities service companies",
   "url": "https://hennepinlogic.xyz",
   "telephone": "(612) 695-1337",
   "email": "sales@hennepinlogic.xyz",
@@ -120,7 +119,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      <link rel="icon" href="/favicon.png" type="image/png" />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground font-sans`}

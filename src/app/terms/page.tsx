@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Terms of service for Hennepin Logic. Read our terms and conditions for using our services.',
+  description: 'Terms of service for Nexly. Read our terms and conditions for using our services.',
 };
 
 export default function TermsPage() {
@@ -16,14 +16,14 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">1. Agreement to Terms</h2>
             <p>
-              By accessing or using the services provided by Hennepin Logic (&ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+              By accessing or using the services provided by Nexly (&ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">2. Description of Services</h2>
             <p className="mb-4">
-              Hennepin Logic provides automated lead response and follow up services for home service businesses, including but not limited to:
+              Nexly provides automated lead response and follow up services for home service businesses, including but not limited to:
             </p>
             <ul className="list-disc pl-6 mb-4 space-y-2">
               <li>Automated text responses to missed calls</li>
@@ -102,14 +102,14 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">8. Indemnification</h2>
             <p>
-              You agree to indemnify and hold harmless Hennepin Logic, its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of our services or violation of these terms.
+              You agree to indemnify and hold harmless Nexly, its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of our services or violation of these terms.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">9. Intellectual Property</h2>
             <p>
-              All content, trademarks, and intellectual property related to our services remain the property of Hennepin Logic. You may not copy, modify, or distribute our materials without prior written consent.
+              All content, trademarks, and intellectual property related to our services remain the property of Nexly. You may not copy, modify, or distribute our materials without prior written consent.
             </p>
           </section>
 
@@ -140,7 +140,7 @@ export default function TermsPage() {
               For questions about these terms, please contact us at:
             </p>
             <div className="mt-4 p-4 bg-muted rounded-lg">
-              <p><strong>Hennepin Logic</strong></p>
+              <p><strong>Nexly</strong></p>
               <p>Twin Cities metro</p>
               <p>
                 Email:{' '}

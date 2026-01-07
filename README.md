@@ -1,6 +1,6 @@
-# Hennepin Logic Website
+# Nexly Website
 
-A modern, high-converting website for Hennepin Logic - an AI automation agency selling a "60-Second Speed-to-Lead System" to Minneapolis area plumbing companies and water damage restoration/mitigation companies.
+A modern, high-converting website for Nexly - an AI automation agency selling a 60 second lead response system to Minneapolis area service companies.
 
 ## 🚀 Quick Start
 
@@ -35,9 +35,9 @@ hennepinlogic-site/
 │   │   ├── contact/         # Contact page
 │   │   ├── how-it-works/    # How it works page
 │   │   ├── pilot/           # Pilot program page
-│   │   ├── plumbing/        # Plumbing niche landing page
+│   │   ├── plumbing/        # Legacy niche landing page
 │   │   ├── privacy/         # Privacy policy
-│   │   ├── restoration/     # Restoration niche landing page
+│   │   ├── restoration/     # Legacy niche landing page
 │   │   ├── terms/           # Terms of service
 │   │   ├── globals.css      # Global styles
 │   │   ├── layout.tsx       # Root layout with SEO
@@ -67,8 +67,8 @@ Copy `.env.example` to `.env.local` and configure:
 | Route | Description |
 |-------|-------------|
 | `/` | Homepage with hero, system overview, pilot offer |
-| `/plumbing` | Niche landing page for plumbing companies |
-| `/restoration` | Niche landing page for restoration companies |
+| `/plumbing` | Legacy niche landing page |
+| `/restoration` | Legacy niche landing page |
 | `/how-it-works` | Step-by-step system explanation |
 | `/pilot` | Pilot program details and pricing |
 | `/about` | Company story and local credibility |
@@ -78,13 +78,13 @@ Copy `.env.example` to `.env.local` and configure:
 
 ## 🎨 Design System
 
-- **Font**: Outfit (sans-serif)
+- **Font**: Inter (sans-serif)
 - **Colors**: 
-  - Primary: `#1e40af` (blue)
-  - Accent: `#3b82f6` (bright blue)
-  - Foreground: `#0f172a` (dark navy)
-  - Background: `#ffffff` (white)
-  - Muted: `#f8fafc` (light gray)
+  - Primary: `#ff6b4a` (coral)
+  - Accent: `#f2c14e` (amber)
+  - Foreground: `#f7f2ea` (warm off-white)
+  - Background: `#0f1115` (charcoal)
+  - Muted: `#1b212a` (deep slate)
 - **Tone**: Confident, practical, local, no hype
 
 ## 🔍 SEO Features
@@ -174,4 +174,4 @@ const nextConfig = {
 
 ---
 
-© 2026 Hennepin Logic. All rights reserved.
+© 2026 Nexly. All rights reserved.

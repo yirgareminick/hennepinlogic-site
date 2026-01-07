@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Logo } from "./Logo";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +19,6 @@ export function Navigation() {
   const navLinks = [
     { href: "/how-it-works", label: "How It Works" },
     { href: "/pilot", label: "Pilot Program" },
-    { href: "/plumbing", label: "Plumbing" },
-    { href: "/restoration", label: "Restoration" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
@@ -35,18 +33,9 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-9 h-9">
-              <Image
-                src="/hl-logo.png"
-                alt="Hennepin Logic"
-                width={36}
-                height={36}
-                className="h-9 w-9 rounded object-cover"
-                priority
-              />
-            </div>
+            <Logo size={36} />
             <span className="font-semibold text-foreground tracking-tight">
-              Hennepin Logic
+              Nexly
             </span>
           </Link>
 

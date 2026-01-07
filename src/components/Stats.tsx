@@ -75,12 +75,11 @@ export function Stats() {
             </div>
             <div>
               <h4 className="text-foreground font-medium mb-1 text-sm">
-                Context for service businesses
+                Context for urgent response teams
               </h4>
               <p className="text-foreground-muted text-sm">
-                For emergency plumbing and water damage restoration, 
-                customers with active leaks or flooding aren&apos;t comparison shopping. 
-                They&apos;re calling the next number on the list.
+                When an issue feels urgent, customers are not comparison shopping. 
+                They are calling the next number on the list until someone answers.
               </p>
             </div>
           </div>
