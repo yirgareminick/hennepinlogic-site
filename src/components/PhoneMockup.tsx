@@ -130,6 +130,10 @@ export function PhoneMockup({
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
   const [currentTyping, setCurrentTyping] = useState<'outgoing' | 'incoming' | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number | null>(null);
+  const startTimeRef = useRef<number>(0);
+  const pausedTimeRef = useRef<number>(0);
+  const lastProcessedRef = useRef<number>(-1);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -141,18 +145,37 @@ export function PhoneMockup({
   }, [visibleMessages, currentTyping]);
 
   useEffect(() => {
-    const timeouts: NodeJS.Timeout[] = [];
+    const totalDuration = conversation[conversation.length - 1].delay + 5000;
     
-    const runSequence = () => {
+    const resetSequence = () => {
       setVisibleMessages([]);
       setCurrentTyping(null);
-      
+      lastProcessedRef.current = -1;
       if (containerRef.current) {
         containerRef.current.scrollTop = 0;
       }
+    };
+
+    const processFrame = (timestamp: number) => {
+      if (startTimeRef.current === 0) {
+        startTimeRef.current = timestamp;
+      }
       
+      const elapsed = timestamp - startTimeRef.current;
+      
+      // Loop the animation
+      if (elapsed >= totalDuration) {
+        resetSequence();
+        startTimeRef.current = timestamp;
+        animationRef.current = requestAnimationFrame(processFrame);
+        return;
+      }
+      
+      // Process messages based on elapsed time
       conversation.forEach((msg, index) => {
-        const timeout = setTimeout(() => {
+        if (index <= lastProcessedRef.current) return;
+        if (elapsed >= msg.delay) {
+          lastProcessedRef.current = index;
           if (msg.type === "typing") {
             setCurrentTyping('outgoing');
           } else if (msg.type === "typing-incoming") {
@@ -161,19 +184,39 @@ export function PhoneMockup({
             setCurrentTyping(null);
             setVisibleMessages((prev) => [...prev, index]);
           }
-        }, msg.delay);
-        timeouts.push(timeout);
+        }
       });
+      
+      animationRef.current = requestAnimationFrame(processFrame);
     };
 
-    runSequence();
+    // Handle visibility change to pause/resume cleanly
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // Tab is hidden - pause animation
+        if (animationRef.current) {
+          cancelAnimationFrame(animationRef.current);
+          animationRef.current = null;
+        }
+        pausedTimeRef.current = performance.now();
+      } else {
+        // Tab is visible - restart from beginning for clean state
+        resetSequence();
+        startTimeRef.current = 0;
+        animationRef.current = requestAnimationFrame(processFrame);
+      }
+    };
 
-    const totalDuration = conversation[conversation.length - 1].delay + 5000;
-    const loopInterval = setInterval(runSequence, totalDuration);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // Start the animation
+    animationRef.current = requestAnimationFrame(processFrame);
 
     return () => {
-      timeouts.forEach(clearTimeout);
-      clearInterval(loopInterval);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [conversation]);
 
