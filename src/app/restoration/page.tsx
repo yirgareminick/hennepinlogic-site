@@ -357,7 +357,7 @@ export default function RestorationPage() {
 
       <CTA
         title="See how it works for restoration"
-        description="10 minute call to walk through the system with restoration specific examples and discuss your current operations."
+        description="15 minute call to walk through the system with restoration specific examples and discuss your current operations."
       />
     </>
   );

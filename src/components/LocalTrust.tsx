@@ -1,4 +1,5 @@
 const serviceAreas = [
+  "Minneapolis",
   "St. Paul",
   "Bloomington",
   "Edina",

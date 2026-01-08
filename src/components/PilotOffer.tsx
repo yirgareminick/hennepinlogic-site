@@ -134,7 +134,7 @@ export function PilotOffer({ variant = "default" }: PilotOfferProps) {
             </Link>
 
             <p className="text-center text-sm text-foreground-muted mt-4">
-              10 minute call to review fit and answer questions
+              15 minute call to review fit and answer questions
             </p>
           </div>
         </div>

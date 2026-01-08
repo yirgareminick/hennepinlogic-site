@@ -299,7 +299,7 @@ export default function HowItWorksPage() {
 
           <div className="space-y-6">
             {[
-              { step: "1", title: "Discovery call", duration: "10 min", description: "We discuss your current setup, lead sources, and requirements. Determine if the system is a fit." },
+              { step: "1", title: "Discovery call", duration: "15 min", description: "We discuss your current setup, lead sources, and requirements. Determine if the system is a fit." },
               { step: "2", title: "Access & configuration", duration: "1 to 2 hours", description: "You provide access credentials (phone forwarding, form webhooks, API keys). We configure the system." },
               { step: "3", title: "Testing", duration: "1 to 2 hours", description: "We run test scenarios, missed calls, form submissions, escalation triggers. Verify everything works." },
               { step: "4", title: "Go live", duration: "Ongoing", description: "System goes active. We monitor the first few days closely and make adjustments as needed." },

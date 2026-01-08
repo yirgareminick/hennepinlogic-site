@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://hennepinlogic.xyz'),
   title: {
-    default: "Hennepin Logic | Automated Lead Response for Twin Cities Service Companies",
+    default: "Hennepin Logic | Automated Lead Response",
     template: "%s | Hennepin Logic"
   },
   description: "Automated lead response infrastructure for Twin Cities plumbing and restoration companies. Under 60 second response time on missed calls and web leads.",

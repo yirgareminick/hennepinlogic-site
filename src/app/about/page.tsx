@@ -223,7 +223,7 @@ export default function AboutPage() {
 
       <CTA
         title="Ready to see how it works?"
-        description="10 minute call to discuss your operation and whether the system makes sense."
+        description="15 minute call to discuss your operation and whether the system makes sense."
         variant="minimal"
       />
     </>

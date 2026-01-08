@@ -234,7 +234,7 @@ export default function PlumbingPage() {
 
       <CTA
         title="See how it works for plumbing"
-        description="10 minute call to walk through the system with plumbing specific examples and discuss your current setup."
+        description="15 minute call to walk through the system with plumbing specific examples and discuss your current setup."
       />
     </>
   );

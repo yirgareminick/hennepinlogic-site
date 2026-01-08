@@ -285,7 +285,7 @@ export default function PilotPage() {
 
       <CTA
         title="Ready to start the pilot?"
-        description="Schedule a 10 minute call to discuss your setup and determine if it's a fit."
+        description="Schedule a 30 minute call to discuss your setup and determine if it's a fit."
         buttonText="Schedule Demo"
       />
     </>
