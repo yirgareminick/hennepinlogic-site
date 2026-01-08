@@ -66,8 +66,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verificati"3H3UPfCtBR5aHBKL3XVLn1GkvrbXeRnwIqE3tP9a_kE"
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  verification: {
+    google: "3H3UPfCtBR5aHBKL3XVLn1GkvrbXeRnwIqE3tP9a_kE",
   },
   icons: {
     icon: "/favicon.png",
