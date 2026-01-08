@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color tokens - Light neutral with coral and amber */
-  --color-background: #ffffff;
-  --color-background-secondary: #f8fafc;
-  --color-foreground: #1a1d22;
-  --color-foreground-muted: #5f6773;
-  --color-primary: #ff6b4a;
-  --color-primary-dark: #e25538;
-  --color-secondary: #7b8794;
-  --color-accent: #f2c14e;
-  --color-muted: #eef1f4;
-  --color-border: #d9e0e7;
-  --color-success: #2fbf71;
-  --color-card: #ffffff;
+  /* Color tokens - Classic Indigo */
+  --color-background: #FFFFFF;
+  --color-background-secondary: #F7FAFC;
+  --color-foreground: #1A202C;
+  --color-foreground-muted: #4A5568;
+  --color-primary: #4C51BF;
+  --color-primary-dark: #434190;
+  --color-secondary: #A0AEC0;
+  --color-accent: #D69E2E;
+  --color-muted: #E2E8F0;
+  --color-border: #CBD5E0;
+  --color-success: #38A169;
+  --color-card: #FFFFFF;
   
   /* Fonts */
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -21,26 +21,28 @@
 }
 
 html, body {
-  background-color: #ffffff;
-  color: #1a1d22;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d9e0e7;
-  border-radius: 3px;
+  background: var(--color-border);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c5ced8;
+  background: #A0AEC0;
 }
 
 /* Smooth scroll */
@@ -50,57 +52,57 @@ html {
 
 /* Selection */
 ::selection {
-  background: #ff6b4a;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-foreground);
 }
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid #ff6b4a;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
 /* Card styles */
 .card-tech {
-  background: linear-gradient(to bottom, #ffffff, #f7f8fa);
-  border: 1px solid #d9e0e7;
+  background: linear-gradient(to bottom, var(--color-card), #F7FAFC);
+  border: 1px solid var(--color-border);
   transition: all 0.3s ease;
 }
 
 .card-tech:hover {
-  border-color: #c5ced8;
+  border-color: var(--color-primary);
   transform: translateY(-2px);
 }
 
 /* Button styles */
 .btn-primary {
-  background: linear-gradient(135deg, #ff6b4a 0%, #e25538 100%);
-  color: #ffffff;
-  font-weight: 500;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #FFFFFF;
+  font-weight: 600;
   padding: 0.875rem 1.75rem;
   border-radius: 0.5rem;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(255, 107, 74, 0.25);
+  box-shadow: 0 4px 14px rgba(76, 81, 191, 0.25);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(255, 107, 74, 0.35);
+  box-shadow: 0 6px 20px rgba(76, 81, 191, 0.35);
   transform: translateY(-1px);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #1a1d22;
-  font-weight: 500;
+  color: var(--color-foreground);
+  font-weight: 600;
   padding: 0.875rem 1.75rem;
   border-radius: 0.5rem;
-  border: 1px solid #c5ced8;
+  border: 1.5px solid var(--color-border);
   transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  border-color: #ff6b4a;
-  background: rgba(255, 107, 74, 0.08);
+  border-color: var(--color-primary);
+  background: rgba(76, 81, 191, 0.1);
 }
 
 /* Number styling */
@@ -111,47 +113,47 @@ html {
 
 /* Glow effects */
 .glow-primary {
-  box-shadow: 0 0 60px rgba(255, 107, 74, 0.14);
+  box-shadow: 0 0 60px rgba(76, 81, 191, 0.15);
 }
 
 .glow-subtle {
-  box-shadow: 0 0 80px rgba(255, 107, 74, 0.08);
+  box-shadow: 0 0 80px rgba(76, 81, 191, 0.1);
 }
 
 /* Background utilities */
 .bg-grid-fade {
   background-image: 
-    linear-gradient(to bottom, transparent, #ffffff),
-    linear-gradient(to right, rgba(217, 224, 231, 0.5) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(217, 224, 231, 0.5) 1px, transparent 1px);
+    linear-gradient(to bottom, transparent, var(--color-background)),
+    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
   background-size: 100% 100%, 60px 60px, 60px 60px;
 }
 
 .bg-radial-top {
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 107, 74, 0.12), transparent);
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(76, 81, 191, 0.1), transparent);
 }
 
 .bg-radial-center {
-  background: radial-gradient(circle at 50% 50%, rgba(255, 107, 74, 0.06) 0%, transparent 50%);
+  background: radial-gradient(circle at 50% 50%, rgba(76, 81, 191, 0.08) 0%, transparent 50%);
 }
 
 /* Utility classes */
-.bg-background { background-color: #ffffff; }
-.bg-background-secondary { background-color: #f8fafc; }
-.bg-muted { background-color: #eef1f4; }
-.bg-card { background-color: #ffffff; }
-.bg-border { background-color: #d9e0e7; }
-.bg-primary { background-color: #ff6b4a; }
-.bg-success { background-color: #2fbf71; }
+.bg-background { background-color: var(--color-background); }
+.bg-background-secondary { background-color: var(--color-background-secondary); }
+.bg-muted { background-color: var(--color-muted); }
+.bg-card { background-color: var(--color-card); }
+.bg-border { background-color: var(--color-border); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-success { background-color: var(--color-success); }
 
-.text-foreground { color: #1a1d22; }
-.text-foreground-muted { color: #5f6773; }
-.text-primary { color: #ff6b4a; }
-.text-accent { color: #f2c14e; }
-.text-success { color: #2fbf71; }
+.text-foreground { color: var(--color-foreground); }
+.text-foreground-muted { color: var(--color-foreground-muted); }
+.text-primary { color: var(--color-primary); }
+.text-accent { color: var(--color-accent); }
+.text-success { color: var(--color-success); }
 
-.border-border { border-color: #d9e0e7; }
-.border-primary { border-color: #ff6b4a; }
+.border-border { border-color: var(--color-border); }
+.border-primary { border-color: var(--color-primary); }
 
 /* Terminal/code styling */
 .terminal-text {
@@ -176,7 +178,7 @@ html {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #1a1d22 0%, #5f6773 100%);
+  background: linear-gradient(135deg, #111318 0%, #4a5058 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

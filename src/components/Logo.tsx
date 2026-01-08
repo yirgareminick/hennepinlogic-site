@@ -16,12 +16,12 @@ export function Logo({ className = "", size = 36 }: LogoProps) {
       {/* Background circle with gradient */}
       <defs>
         <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#ff6b4a" />
-          <stop offset="100%" stopColor="#e25538" />
+          <stop offset="0%" stopColor="#4C51BF" />
+          <stop offset="100%" stopColor="#434190" />
         </linearGradient>
         <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#f2c14e" />
-          <stop offset="100%" stopColor="#e5a83d" />
+          <stop offset="0%" stopColor="#D69E2E" />
+          <stop offset="100%" stopColor="#B88623" />
         </linearGradient>
       </defs>
       

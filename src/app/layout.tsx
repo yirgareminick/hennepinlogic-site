@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    google: "3H3UPfCtBR5aHBKL3XVLn1GkvrbXeRnwIqE3tP9a_kE",
   },
   icons: {
     icon: "/favicon.svg",

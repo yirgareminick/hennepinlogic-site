@@ -223,8 +223,8 @@ export function PhoneMockup({
   return (
     <div className="relative">
       <div className="absolute inset-0 -z-10 opacity-70">
-        <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-blue-500/30 via-transparent to-black/40 blur-[70px]" />
-        <div className="absolute inset-6 rounded-[2.5rem] border border-white/5 shadow-[0_20px_60px_rgba(2,6,23,0.9)]" />
+        <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-primary/40 via-transparent to-amber-500/20 blur-[70px]" />
+        <div className="absolute inset-6 rounded-[2.5rem] border border-primary/15 shadow-[0_20px_60px_rgba(255,107,74,0.2)]" />
       </div>
       <style jsx>{`
         @keyframes typing-dot {
@@ -248,7 +248,9 @@ export function PhoneMockup({
       `}</style>
       
       {/* Phone frame */}
-      <div className="relative w-[280px] h-[580px] bg-gradient-to-b from-white/10 via-black/40 to-black/90 rounded-[3rem] p-2 shadow-[0_25px_90px_rgba(15,23,42,0.55)] border border-blue-500/30 ring-1 ring-blue-500/15 transition duration-500 transform-gpu hover:scale-[0.995] opacity-95">
+      <div className="relative w-[280px] h-[580px] rounded-[3rem] p-2 shadow-[0_25px_90px_rgba(255,107,74,0.2)] border border-primary/30 ring-1 ring-white/50 transition duration-500 transform-gpu hover:scale-[0.995]" style={{ background: 'linear-gradient(165deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 25%, rgba(255,200,180,0.4) 50%, rgba(255,107,74,0.25) 75%, rgba(226,85,56,0.3) 100%)' }}>
+        {/* Glass highlight */}
+        <div className="pointer-events-none absolute inset-0 rounded-[3rem] bg-gradient-to-br from-white/60 via-transparent to-transparent" style={{ clipPath: 'polygon(0 0, 60% 0, 30% 40%, 0 50%)' }} />
         {/* Inner screen */}
         <div className="relative w-full h-full bg-[#0a0e14] rounded-[2.5rem] overflow-hidden">
           {/* Dynamic Island */}
