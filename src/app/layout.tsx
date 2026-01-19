@@ -1,161 +1,90 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
-import { Navigation, Footer } from "@/components";
-import Script from "next/script";
+import type { Metadata } from 'next'
+import { Inter, Space_Grotesk } from 'next/font/google'
+import './globals.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
-  display: "swap",
-});
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hennepinlogic.xyz'),
-  title: {
-    default: "Hennepin Logic | Automated Lead Response",
-    template: "%s | Hennepin Logic"
-  },
-  description: "Automated lead response infrastructure for Twin Cities plumbing and restoration companies. Under 60 second response time on missed calls and web leads.",
-  keywords: [
-    "lead response automation",
-    "Twin Cities plumber",
-    "water damage restoration",
-    "missed call text back",
-    "speed to lead",
-    "service business automation"
-  ],
-  authors: [{ name: "Hennepin Logic" }],
-  creator: "Hennepin Logic",
+  title: 'Hennepin Logic | Automated Lead Response for Twin Cities Service Businesses',
+  description: 'Automated lead response system delivering rapid response times on missed calls and web leads for Minneapolis/St. Paul service businesses. 60-second response guarantee.',
+  keywords: 'Minneapolis lead response, Twin Cities automated reception, service business lead capture, missed call response system, Minnesota service automation',
+  authors: [{ name: 'Hennepin Logic' }],
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://hennepinlogic.xyz",
-    siteName: "Hennepin Logic",
-    title: "Hennepin Logic | Automated Lead Response",
-    description: "Automated lead response infrastructure for Twin Cities service companies. Under 60 second response time.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Hennepin Logic Automated Lead Response",
-      },
-    ],
+    title: 'Hennepin Logic | Automated Lead Response for Twin Cities Service Businesses',
+    description: 'Automated lead response system delivering rapid response times on missed calls and web leads for Minneapolis/St. Paul service businesses.',
+    url: 'https://hennepinlogic.com',
+    siteName: 'Hennepin Logic',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Hennepin Logic | Automated Lead Response",
-    description: "Automated lead response infrastructure for Twin Cities service companies.",
-    images: ["/og-image.png"],
+    card: 'summary_large_image',
+    title: 'Hennepin Logic | Automated Lead Response',
+    description: 'Automated lead response system for Twin Cities service businesses.',
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
-  verification: {
-    google: "3H3UPfCtBR5aHBKL3XVLn1GkvrbXeRnwIqE3tP9a_kE",
-  },
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
-};
-
-// JSON-LD Schema
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Hennepin Logic",
-  "description": "Automated lead response infrastructure for Twin Cities plumbing and restoration companies",
-  "url": "https://hennepinlogic.xyz",
-  "telephone": "(612) 695-1337",
-  "email": "sales@hennepinlogic.xyz",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Minneapolis",
-    "addressRegion": "MN",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Minneapolis"
-    },
-    {
-      "@type": "City", 
-      "name": "St. Paul"
-    },
-    {
-      "@type": "State",
-      "name": "Minnesota"
-    }
-  ],
-  "priceRange": "$950 to $2500"
-};
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Hennepin Logic',
+              description: 'Automated lead response infrastructure for service businesses in the Twin Cities metropolitan area',
+              url: 'https://hennepinlogic.com',
+              email: 'info@hennepinlogic.com',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Minneapolis',
+                addressRegion: 'MN',
+                addressCountry: 'US',
+              },
+              areaServed: [
+                { '@type': 'City', name: 'Minneapolis' },
+                { '@type': 'City', name: 'St. Paul' },
+                { '@type': 'City', name: 'Bloomington' },
+                { '@type': 'City', name: 'Edina' },
+                { '@type': 'City', name: 'Eden Prairie' },
+                { '@type': 'City', name: 'Plymouth' },
+                { '@type': 'City', name: 'Maple Grove' },
+                { '@type': 'City', name: 'Brooklyn Park' },
+                { '@type': 'City', name: 'Burnsville' },
+                { '@type': 'City', name: 'Eagan' },
+              ],
+            }),
+          }}
         />
-      <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground font-sans`}
-      >
-        <Navigation />
+      <body className="font-sans antialiased">
+        <Header />
         <main>{children}</main>
         <Footer />
-        
-        {/* Analytics - Plausible */}
-        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
-          <Script
-            defer
-            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
-            src="https://plausible.io/js/script.js"
-          />
-        )}
-        
-        {/* Analytics - Google Analytics 4 */}
-        {process.env.NEXT_PUBLIC_GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-              `}
-            </Script>
-          </>
-        )}
       </body>
     </html>
-  );
+  )
 }

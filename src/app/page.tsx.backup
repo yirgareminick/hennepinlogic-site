@@ -92,8 +92,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Solution Overview with Phone Demo */}
+with Phone Demo */}
       <section className="section-padding bg-slate-50">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -177,7 +176,8 @@ export default function Home() {
                   See Detailed System Explanation
                 </CTAButton>
               </div>
-            </div>
+            </div
+            <CTAButton>See Detailed System Explanation</CTAButton>
           </div>
         </div>
       </section>
@@ -245,7 +245,7 @@ export default function Home() {
                 <FiCheckCircle className="text-green-600 text-2xl" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">
+                <h3 className="text-lg font-heading font-bold text-slate-900 mb-2">
                   Works With Your Systems
                 </h3>
                 <p className="text-slate-600">

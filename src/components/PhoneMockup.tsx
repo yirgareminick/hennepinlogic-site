@@ -129,20 +129,22 @@ export function PhoneMockup({
 }: PhoneMockupProps) {
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
   const [currentTyping, setCurrentTyping] = useState<'outgoing' | 'incoming' | null>(null);
+  const [isUserScrolling, setIsUserScrolling] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
   const startTimeRef = useRef<number>(0);
   const pausedTimeRef = useRef<number>(0);
   const lastProcessedRef = useRef<number>(-1);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    if (containerRef.current) {
+    if (containerRef.current && !isUserScrolling) {
       containerRef.current.scrollTo({
         top: containerRef.current.scrollHeight,
         behavior: 'smooth'
       });
     }
-  }, [visibleMessages, currentTyping]);
+  }, [visibleMessages, currentTyping, isUserScrolling]);
 
   useEffect(() => {
     const totalDuration = conversation[conversation.length - 1].delay + 5000;
@@ -150,6 +152,7 @@ export function PhoneMockup({
     const resetSequence = () => {
       setVisibleMessages([]);
       setCurrentTyping(null);
+      setIsUserScrolling(false);
       lastProcessedRef.current = -1;
       if (containerRef.current) {
         containerRef.current.scrollTop = 0;
@@ -216,9 +219,29 @@ export function PhoneMockup({
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [conversation]);
+
+  const handleScroll = () => {
+    if (!containerRef.current) return;
+    
+    const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
+    const isAtBottom = scrollHeight - scrollTop - clientHeight < 10;
+    
+    setIsUserScrolling(!isAtBottom);
+    
+    // Reset user scrolling flag after 3 seconds of no scroll activity
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+    scrollTimeoutRef.current = setTimeout(() => {
+      setIsUserScrolling(false);
+    }, 3000);
+  };
 
   return (
     <div className="relative">
@@ -255,7 +278,7 @@ export function PhoneMockup({
           <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20" />
           
           {/* Status bar */}
-          <div className="absolute top-0 left-0 right-0 h-12 z-10 flex items-end justify-between px-8 pb-1">
+          <div className="absolute top-0 left-0 right-0 h-12 z-20 flex items-end justify-between px-8 pb-1">
             <span className="text-[11px] text-white/60 font-medium">9:41</span>
             <div className="flex items-center gap-1 text-white/60">
               <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
@@ -267,8 +290,11 @@ export function PhoneMockup({
             </div>
           </div>
           
+          {/* Fade overlay at top of screen */}
+          <div className="absolute top-12 left-0 right-0 h-8 bg-gradient-to-b from-[#0a0e14] to-transparent pointer-events-none z-15" />
+          
           {/* Chat header */}
-          <div className="absolute top-12 left-0 right-0 h-14 bg-[#0a0e14]/95 backdrop-blur-sm border-b border-white/5 flex items-center px-4 z-10">
+          <div className="absolute top-12 left-0 right-0 h-14 bg-[#0a0e14]/95 backdrop-blur-sm border-b border-white/5 flex items-center px-4 z-20">
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center mr-3">
               <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -283,10 +309,14 @@ export function PhoneMockup({
             </div>
           </div>
           
+          {/* Fade overlay at top of messages */}
+          <div className="absolute top-[6.5rem] left-0 right-0 h-12 bg-gradient-to-b from-[#0a0e14] via-[#0a0e14]/80 to-transparent pointer-events-none z-10" />
+          
           {/* Messages container */}
           <div 
             ref={containerRef}
-            className="absolute top-26 bottom-16 left-0 right-0 overflow-y-auto px-3 pt-16 pb-4 space-y-2.5 scrollbar-hide"
+            onScroll={handleScroll}
+            className="absolute top-[6.5rem] bottom-16 left-0 right-0 overflow-y-auto px-3 pt-2 pb-4 space-y-2.5 scrollbar-hide"
           >
             {conversation.map((msg, index) => {
               if (!visibleMessages.includes(index)) return null;

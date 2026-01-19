@@ -1,347 +1,492 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { FAQ, CTA } from "@/components";
+import type { Metadata } from 'next'
+import CTAButton from '@/components/CTAButton'
+import { FiPhone, FiMessageSquare, FiDatabase, FiAlertCircle, FiSettings, FiZap, FiShield, FiCheckCircle } from 'react-icons/fi'
 
 export const metadata: Metadata = {
-  title: "How the System Works",
-  description:
-    "Technical documentation for the 60 second lead response system. Integrations, automation flow, data capture, and escalation logic explained.",
+  title: 'How It Works | Hennepin Logic - Automated Lead Response System',
+  description: 'Technical details on how Hennepin Logic automated lead response system monitors calls, responds within 60 seconds, captures lead information, and escalates emergencies for Twin Cities businesses.',
   openGraph: {
-    title: "How the System Works | Hennepin Logic",
-    description:
-      "Technical documentation for the 60 second lead response system.",
+    title: 'How It Works | Hennepin Logic',
+    description: 'Technical details on our automated lead response infrastructure for service businesses.',
   },
-};
+}
 
-const integrations = [
-  {
-    name: "Phone System",
-    description: "Call forwarding or SIP trunk integration",
-    status: "Required",
-    details: "Works with Verizon, AT&T, local carriers, and VoIP systems. We configure forwarding rules so missed calls trigger the system while your existing phone setup stays unchanged.",
-  },
-  {
-    name: "Web Forms",
-    description: "Webhook or direct form integration",
-    status: "Optional",
-    details: "Your contact forms send data to our endpoint via webhook. Works with most form builders and website platforms. Setup requires adding a webhook URL to your form configuration.",
-  },
-  {
-    name: "Google Business Profile",
-    description: "GBP messaging API integration",
-    status: "Optional",
-    details: "We connect to Google's Business Messaging API to capture messages from your GBP listing. Requires verification through Google Business Profile.",
-  },
-  {
-    name: "Facebook Lead Forms",
-    description: "Facebook lead ads sync",
-    status: "Optional",
-    details: "Lead form submissions from Facebook ads are captured via the Facebook Marketing API. Requires Facebook Business account access.",
-  },
-];
-
-const dataPoints = [
-  { field: "Caller/Lead Name", source: "SMS conversation", required: "Optional" },
-  { field: "Phone Number", source: "Caller ID / Form", required: "Automatic" },
-  { field: "Service Type", source: "Conversational capture", required: "Required" },
-  { field: "Property Address", source: "Conversational capture", required: "Required" },
-  { field: "Urgency Level", source: "Keyword detection", required: "Automatic" },
-  { field: "Callback Preference", source: "Conversational capture", required: "Optional" },
-  { field: "Timestamp", source: "System", required: "Automatic" },
-  { field: "Source Channel", source: "System", required: "Automatic" },
-];
-
-const escalationRules = [
-  {
-    trigger: "Emergency keywords",
-    examples: "flooding, burst, gas smell, sewage, fire, no heat",
-    action: "Immediate SMS + voice call to on call",
-  },
-  {
-    trigger: "High urgency response",
-    examples: "Customer indicates ASAP, today, emergency",
-    action: "Priority flag, immediate notification",
-  },
-  {
-    trigger: "Insurance referral",
-    examples: "Call from known insurance numbers",
-    action: "Priority routing, specific response flow",
-  },
-  {
-    trigger: "Business hours",
-    examples: "Outside configured operating hours",
-    action: "After hours protocol, escalation if urgent",
-  },
-];
-
-export default function HowItWorksPage() {
+export default function HowItWorks() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-fade opacity-30" />
-        <div className="absolute inset-0 bg-radial-top" />
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-primary font-medium mb-4 terminal-text">// docs.system</p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            System Documentation
-          </h1>
-          <p className="text-xl text-foreground-muted">
-            Technical overview of the lead response system. How integrations work, 
-            what data is captured, and how escalation logic operates.
-          </p>
+      <section className="section-padding bg-slate-900 text-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+              How the System Works
+            </h1>
+            <p className="text-xl text-slate-300">
+              Technical breakdown of the automated lead response infrastructure. 
+              No marketing fluff—just the specifics of how calls get monitored, 
+              responses get sent, and emergencies get escalated.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Architecture Overview */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Architecture Overview</h2>
-            <p className="text-foreground-muted max-w-3xl">
-              The system sits between your inbound channels and your team. It monitors for 
-              lead events, responds automatically, captures information, and routes to the 
-              appropriate person based on configurable rules.
-            </p>
-          </div>
+      {/* System Flow */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-12 text-center">
+              System Flow: Call to Response
+            </h2>
 
-          {/* Visual flow */}
-          <div className="card-tech rounded-xl p-8 overflow-x-auto">
-            <div className="flex items-center justify-between min-w-[800px] gap-4">
-              {/* Inbound */}
-              <div className="text-center">
-                <div className="w-24 h-24 rounded-xl bg-muted border border-border flex items-center justify-center mb-3 mx-auto">
-                  <svg className="w-10 h-10 text-foreground-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
+            <div className="space-y-8">
+              <div className="flex gap-6 items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                  1
                 </div>
-                <div className="text-sm font-medium text-foreground">Inbound</div>
-                <div className="text-xs text-foreground-muted">Phone, Web, GBP, FB</div>
-              </div>
-
-              <div className="flex-1 h-px bg-border relative">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 bg-card text-xs text-foreground-muted">
-                  webhook/API
-                </div>
-              </div>
-
-              {/* System */}
-              <div className="text-center">
-                <div className="w-24 h-24 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 mx-auto glow-primary">
-                  <svg className="w-10 h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </div>
-                <div className="text-sm font-medium text-foreground">Hennepin Logic</div>
-                <div className="text-xs text-foreground-muted">Process & Route</div>
-              </div>
-
-              <div className="flex-1 h-px bg-border relative">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 bg-card text-xs text-foreground-muted">
-                  SMS/Voice
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <FiPhone className="text-primary-600 text-2xl" />
+                    <h3 className="text-2xl font-heading font-bold text-slate-900">
+                      Call Monitoring
+                    </h3>
+                  </div>
+                  <p className="text-slate-700 mb-4">
+                    System monitors your phone line through call forwarding or SIP trunk integration. 
+                    Works with existing phone systems—Verizon, AT&T, local carriers, VoIP providers.
+                  </p>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>Your phone number stays the same—no customer-facing changes</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>System only engages when calls exceed your timeout threshold</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>Configure: after-hours only, overflow during busy periods, or 24/7</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
-              {/* Lead */}
-              <div className="text-center">
-                <div className="w-24 h-24 rounded-xl bg-muted border border-border flex items-center justify-center mb-3 mx-auto">
-                  <svg className="w-10 h-10 text-foreground-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
+              <div className="flex gap-6 items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                  2
                 </div>
-                <div className="text-sm font-medium text-foreground">Lead</div>
-                <div className="text-xs text-foreground-muted">Response + Capture</div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <FiZap className="text-primary-600 text-2xl" />
+                    <h3 className="text-2xl font-heading font-bold text-slate-900">
+                      Automated Response
+                    </h3>
+                  </div>
+                  <p className="text-slate-700 mb-4">
+                    When a call goes unanswered past the threshold, automated SMS sent within 60 seconds. 
+                    Initial message acknowledges their call and begins information gathering.
+                  </p>
+                  <div className="bg-slate-50 border-2 border-slate-200 rounded-lg p-4 font-mono text-sm">
+                    <p className="text-slate-700 mb-2">
+                      <strong>Example initial SMS:</strong>
+                    </p>
+                    <p className="text-slate-600">
+                      &quot;Hi, this is [Business Name]. We missed your call but we&apos;re here to help. 
+                      What service do you need assistance with?&quot;
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="flex-1 h-px bg-border relative">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 bg-card text-xs text-foreground-muted">
-                  notify
+              <div className="flex gap-6 items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                  3
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <FiMessageSquare className="text-primary-600 text-2xl" />
+                    <h3 className="text-2xl font-heading font-bold text-slate-900">
+                      Information Capture
+                    </h3>
+                  </div>
+                  <p className="text-slate-700 mb-4">
+                    Automated conversation gathers essential lead information through structured questions. 
+                    Qualification level depends on your tier selection.
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-slate-50 rounded-lg p-4">
+                      <p className="font-semibold text-slate-900 mb-2">Tier 1: Basic</p>
+                      <ul className="text-sm text-slate-600 space-y-1">
+                        <li>• Name</li>
+                        <li>• Service type</li>
+                        <li>• Callback preference</li>
+                      </ul>
+                    </div>
+                    <div className="bg-primary-50 rounded-lg p-4 border-2 border-primary-600">
+                      <p className="font-semibold text-slate-900 mb-2">Tier 2: Advanced</p>
+                      <ul className="text-sm text-slate-600 space-y-1">
+                        <li>• All basic info</li>
+                        <li>• Address/location</li>
+                        <li>• Urgency level</li>
+                        <li>• Custom questions</li>
+                      </ul>
+                    </div>
+                    <div className="bg-slate-50 rounded-lg p-4">
+                      <p className="font-semibold text-slate-900 mb-2">Tier 3: Complete</p>
+                      <ul className="text-sm text-slate-600 space-y-1">
+                        <li>• All advanced info</li>
+                        <li>• Appointment scheduling</li>
+                        <li>• Budget range</li>
+                        <li>• Timeline expectations</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Team */}
-              <div className="text-center">
-                <div className="w-24 h-24 rounded-xl bg-success/10 border border-success/30 flex items-center justify-center mb-3 mx-auto">
-                  <svg className="w-10 h-10 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+              <div className="flex gap-6 items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                  4
                 </div>
-                <div className="text-sm font-medium text-foreground">Your Team</div>
-                <div className="text-xs text-foreground-muted">Qualified lead</div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <FiAlertCircle className="text-primary-600 text-2xl" />
+                    <h3 className="text-2xl font-heading font-bold text-slate-900">
+                      Emergency Escalation
+                    </h3>
+                  </div>
+                  <p className="text-slate-700 mb-4">
+                    Keyword detection identifies urgent situations requiring immediate attention. 
+                    System triggers real-time alerts to your on-call staff.
+                  </p>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>Customizable urgency keywords for your business type</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>Immediate SMS notification to designated on-call number</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>Optional voice call for critical emergencies</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>Full conversation context included in alert</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="flex gap-6 items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                  5
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <FiDatabase className="text-primary-600 text-2xl" />
+                    <h3 className="text-2xl font-heading font-bold text-slate-900">
+                      Data Logging
+                    </h3>
+                  </div>
+                  <p className="text-slate-700 mb-4">
+                    Every interaction logged in your dashboard. Complete conversation history, 
+                    lead qualification details, timestamp, and urgency classification.
+                  </p>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>CSV export for external analysis</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>CRM integration available (webhook support)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>Searchable lead history</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <FiCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
+                      <span>Response time analytics</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Integrations */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Integrations</h2>
-            <p className="text-foreground-muted max-w-3xl">
-              The system connects to your existing channels. No changes to your phone 
-              number or website required. We integrate alongside your current setup.
-            </p>
-          </div>
+      {/* Technical Integration */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-12 text-center">
+              Technical Integration Details
+            </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {integrations.map((integration, index) => (
-              <div key={index} className="card-tech rounded-xl p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="font-semibold text-foreground">{integration.name}</h3>
-                    <p className="text-sm text-foreground-muted">{integration.description}</p>
-                  </div>
-                  <span className={`px-2 py-1 rounded text-xs ${
-                    integration.status === "Required" 
-                      ? "bg-primary/10 text-primary" 
-                      : "bg-muted text-foreground-muted"
-                  }`}>
-                    {integration.status}
-                  </span>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                  <FiPhone className="text-primary-600 text-2xl" />
+                  <h3 className="text-xl font-heading font-bold text-slate-900">
+                    Phone System Compatibility
+                  </h3>
                 </div>
-                <p className="text-sm text-foreground-muted">{integration.details}</p>
+                <ul className="space-y-3 text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Traditional carriers:</strong> Verizon, AT&T, CenturyLink</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>VoIP systems:</strong> RingCentral, Nextiva, 8x8</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Integration methods:</strong> Call forwarding (simple) or SIP trunk (advanced)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Setup time:</strong> Call forwarding in minutes, SIP trunk 1-2 days</span>
+                  </li>
+                </ul>
               </div>
-            ))}
+
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                  <FiSettings className="text-primary-600 text-2xl" />
+                  <h3 className="text-xl font-heading font-bold text-slate-900">
+                    Configuration Options
+                  </h3>
+                </div>
+                <ul className="space-y-3 text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Timeout threshold:</strong> Set when system engages (e.g., after 4 rings)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Operating hours:</strong> 24/7, business hours, or after-hours only</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Custom questions:</strong> Qualification questions specific to your service</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Escalation rules:</strong> Define urgency keywords and alert protocols</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                  <FiDatabase className="text-primary-600 text-2xl" />
+                  <h3 className="text-xl font-heading font-bold text-slate-900">
+                    Data Management
+                  </h3>
+                </div>
+                <ul className="space-y-3 text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Dashboard access:</strong> Web-based, mobile-responsive</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Export options:</strong> CSV download anytime</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>CRM integration:</strong> Webhook support for popular platforms</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Data retention:</strong> Configurable, you own your data</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                  <FiShield className="text-primary-600 text-2xl" />
+                  <h3 className="text-xl font-heading font-bold text-slate-900">
+                    Security & Reliability
+                  </h3>
+                </div>
+                <ul className="space-y-3 text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Uptime:</strong> System monitored 24/7, redundant infrastructure</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Data encryption:</strong> In transit and at rest</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Backup systems:</strong> Automatic failover if issues detected</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">•</span>
+                    <span><strong>Support:</strong> Twin Cities business hours, emergency line available</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Data Capture */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Data Capture</h2>
-            <p className="text-foreground-muted max-w-3xl">
-              The conversational flow gathers the information you need to respond 
-              effectively. All data is logged and accessible in your dashboard.
-            </p>
-          </div>
-
-          <div className="card-tech rounded-xl overflow-hidden">
-            <table className="w-full">
-              <thead className="bg-muted/50">
-                <tr>
-                  <th className="text-left px-6 py-4 text-sm font-medium text-foreground">Field</th>
-                  <th className="text-left px-6 py-4 text-sm font-medium text-foreground">Source</th>
-                  <th className="text-left px-6 py-4 text-sm font-medium text-foreground">Collection</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {dataPoints.map((point, index) => (
-                  <tr key={index}>
-                    <td className="px-6 py-4 text-sm text-foreground">{point.field}</td>
-                    <td className="px-6 py-4 text-sm text-foreground-muted">{point.source}</td>
-                    <td className="px-6 py-4">
-                      <span className={`px-2 py-1 rounded text-xs ${
-                        point.required === "Automatic"
-                          ? "bg-success/10 text-success"
-                          : point.required === "Required"
-                          ? "bg-primary/10 text-primary"
-                          : "bg-muted text-foreground-muted"
-                      }`}>
-                        {point.required}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Escalation Logic */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Escalation Logic</h2>
-            <p className="text-foreground-muted max-w-3xl">
-              Configurable rules determine how leads are routed. You define what 
-              constitutes an emergency and who gets notified.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {escalationRules.map((rule, index) => (
-              <div key={index} className="card-tech rounded-xl p-6">
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div>
-                    <div className="text-xs text-foreground-muted mb-1 terminal-text">trigger</div>
-                    <div className="font-medium text-foreground">{rule.trigger}</div>
+      {/* Real-World Example */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-8 text-center">
+              Real-World Example
+            </h2>
+            <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-8 border-2 border-slate-200">
+              <h3 className="text-xl font-heading font-bold text-slate-900 mb-6">
+                Scenario: HVAC Company on Saturday Evening
+              </h3>
+              
+              <div className="space-y-4 text-slate-700">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    1
                   </div>
-                  <div>
-                    <div className="text-xs text-foreground-muted mb-1 terminal-text">examples</div>
-                    <div className="text-sm text-foreground-muted">{rule.examples}</div>
+                  <p>
+                    <strong>7:45 PM Saturday:</strong> Customer&apos;s furnace stops working. Temperature dropping. 
+                    They call your business number.
+                  </p>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    2
                   </div>
-                  <div>
-                    <div className="text-xs text-foreground-muted mb-1 terminal-text">action</div>
-                    <div className="text-sm text-primary">{rule.action}</div>
+                  <p>
+                    <strong>7:46 PM:</strong> No answer after 4 rings. System detects unanswered call, 
+                    sends SMS within 60 seconds.
+                  </p>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    3
                   </div>
+                  <p>
+                    <strong>7:47 PM:</strong> Customer receives: &quot;Hi, this is [Business]. We missed your call. 
+                    What HVAC issue are you experiencing?&quot;
+                  </p>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    4
+                  </div>
+                  <p>
+                    <strong>7:48 PM:</strong> Customer responds: &quot;Furnace stopped working, house getting cold, 
+                    two young kids here.&quot;
+                  </p>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    !
+                  </div>
+                  <p>
+                    <strong>7:48 PM:</strong> Keywords &quot;stopped working&quot; + &quot;cold&quot; + &quot;kids&quot; trigger emergency alert. 
+                    On-call technician gets immediate SMS with full context.
+                  </p>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    5
+                  </div>
+                  <p>
+                    <strong>7:50 PM:</strong> Technician calls customer directly. Job captured, emergency handled. 
+                    Everything logged in dashboard.
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Setup Process */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Setup Process</h2>
-            <p className="text-foreground-muted">
-              We handle the technical setup. Here&apos;s what the process looks like.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              { step: "1", title: "Discovery call", duration: "15 min", description: "We discuss your current setup, lead sources, and requirements. Determine if the system is a fit." },
-              { step: "2", title: "Access & configuration", duration: "1 to 2 hours", description: "You provide access credentials (phone forwarding, form webhooks, API keys). We configure the system." },
-              { step: "3", title: "Testing", duration: "1 to 2 hours", description: "We run test scenarios, missed calls, form submissions, escalation triggers. Verify everything works." },
-              { step: "4", title: "Go live", duration: "Ongoing", description: "System goes active. We monitor the first few days closely and make adjustments as needed." },
-            ].map((item, index) => (
-              <div key={index} className="flex gap-6 items-start">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0">
-                  <span className="text-primary font-bold">{item.step}</span>
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-1">
-                    <h3 className="font-semibold text-foreground">{item.title}</h3>
-                    <span className="text-xs text-foreground-muted terminal-text">{item.duration}</span>
-                  </div>
-                  <p className="text-sm text-foreground-muted">{item.description}</p>
-                </div>
+              <div className="mt-6 p-4 bg-green-50 border-2 border-green-200 rounded-lg">
+                <p className="text-green-800">
+                  <strong>Result:</strong> Lead captured and qualified within 4 minutes. Emergency properly escalated. 
+                  Customer impressed by rapid response. Job secured.
+                </p>
               </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              href="/pilot"
-              className="btn-secondary inline-flex items-center gap-2"
-            >
-              View pilot program details
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <FAQ
-        title="Technical FAQ"
-        subtitle="Common questions about system integration and operation"
-      />
+      {/* What It's Not */}
+      <section className="section-padding bg-slate-900 text-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold mb-8 text-center">
+              What This Is NOT
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-slate-800 rounded-lg p-6">
+                <h3 className="text-xl font-heading font-bold mb-3 text-red-400">Not a CRM</h3>
+                <p className="text-slate-300">
+                  We capture leads and log data. We don&apos;t manage your entire customer lifecycle. 
+                  Export to your CRM or use our webhook integration.
+                </p>
+              </div>
 
-      <CTA
-        title="Questions about how it works?"
-        description="Schedule a call to discuss your specific setup and technical requirements."
-      />
+              <div className="bg-slate-800 rounded-lg p-6">
+                <h3 className="text-xl font-heading font-bold mb-3 text-red-400">Not a Marketing Agency</h3>
+                <p className="text-slate-300">
+                  We don&apos;t generate leads. We respond to the leads you already get from your marketing efforts.
+                </p>
+              </div>
+
+              <div className="bg-slate-800 rounded-lg p-6">
+                <h3 className="text-xl font-heading font-bold mb-3 text-red-400">Not an Answering Service</h3>
+                <p className="text-slate-300">
+                  No humans answering your calls. This is automated infrastructure, not a call center.
+                </p>
+              </div>
+
+              <div className="bg-slate-800 rounded-lg p-6">
+                <h3 className="text-xl font-heading font-bold mb-3 text-red-400">Not Lead Generation</h3>
+                <p className="text-slate-300">
+                  We don&apos;t find customers for you. We make sure the customers who find you don&apos;t get ignored.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-6">
+              See It In Action
+            </h2>
+            <p className="text-xl text-slate-600 mb-8">
+              Schedule a 30-minute demo. We&apos;ll walk through the system, discuss your specific setup, 
+              and answer technical questions about integration with your phone system.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTAButton>Schedule Demo</CTAButton>
+              <CTAButton href="/contact" external={false} variant="secondary">
+                Contact Us
+              </CTAButton>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
-  );
+  )
 }

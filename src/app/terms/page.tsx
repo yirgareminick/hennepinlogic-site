@@ -1,157 +1,242 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service',
-  description: 'Terms of service for Hennepin Logic. Read our terms and conditions for using our services.',
-};
+  title: 'Terms of Service | Hennepin Logic',
+  description: 'Terms of service for Hennepin Logic automated lead response services.',
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
-export default function TermsPage() {
+export default function Terms() {
   return (
-    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-foreground mb-8">Terms of Service</h1>
-        <p className="text-secondary mb-8">Last updated: January 2026</p>
+    <section className="section-padding">
+      <div className="container-custom">
+        <div className="max-w-4xl mx-auto prose prose-slate prose-lg">
+          <h1 className="text-4xl font-heading font-bold text-slate-900 mb-6">Terms of Service</h1>
+          <p className="text-sm text-slate-500 mb-8">Last Updated: January 18, 2026</p>
 
-        <div className="prose prose-lg max-w-none text-secondary">
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">1. Agreement to Terms</h2>
-            <p>
-              By accessing or using the services provided by Hennepin Logic (&ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
-            </p>
-          </section>
+          <h2>1. Agreement to Terms</h2>
+          <p>
+            By accessing or using Hennepin Logic services, you agree to be bound by these Terms of Service 
+            (&quot;Terms&quot;). If you disagree with any part of these terms, you may not use our services.
+          </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">2. Description of Services</h2>
-            <p className="mb-4">
-              Hennepin Logic provides automated lead response and follow up services for home service businesses, including but not limited to:
-            </p>
-            <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li>Automated text responses to missed calls</li>
-              <li>Web form and social media lead response</li>
-              <li>Lead qualification and information capture</li>
-              <li>Emergency escalation services</li>
-              <li>Follow up sequences for unresponsive leads</li>
-              <li>Performance reporting and analytics</li>
-            </ul>
-          </section>
+          <h2>2. Description of Services</h2>
+          <p>
+            Hennepin Logic provides automated lead response infrastructure for service businesses in the 
+            Twin Cities metropolitan area. Services include:
+          </p>
+          <ul>
+            <li>Call monitoring via phone integration</li>
+            <li>Automated SMS response to missed calls and web forms</li>
+            <li>Lead information capture and qualification</li>
+            <li>Emergency escalation based on keyword detection</li>
+            <li>Dashboard access for lead management</li>
+            <li>Data export and CRM integration capabilities</li>
+          </ul>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">3. Pilot Program Terms</h2>
-            <p className="mb-4">
-              Our pilot program operates under the following terms:
-            </p>
-            <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li>The pilot fee is $950 for a 30 day period</li>
-              <li>The pilot fee is non refundable once services have begun</li>
-              <li>If you continue with monthly service after the pilot, $500 of the pilot fee will be credited toward your first month</li>
-              <li>There is no obligation to continue after the pilot period</li>
-            </ul>
-          </section>
+          <h2>3. Service Tiers</h2>
+          <p>We offer three service tiers:</p>
+          <ul>
+            <li><strong>Tier 1 (Missed Call Coverage):</strong> Basic SMS response to missed calls</li>
+            <li><strong>Tier 2 (Hybrid Reception):</strong> Advanced qualification with configurable human escalation</li>
+            <li><strong>Tier 3 (Full AI Coverage):</strong> Complete autonomous handling with emergency escalation only</li>
+          </ul>
+          <p>
+            Tier selection determines features, capabilities, and pricing. You may upgrade or downgrade tiers 
+            with 7 days notice.
+          </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">4. Monthly Service Terms</h2>
-            <p className="mb-4">
-              For ongoing monthly service:
-            </p>
-            <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li>Monthly fees range from $1,500 to $2,500 depending on volume and complexity</li>
-              <li>Service is billed monthly in advance</li>
-              <li>Either party may terminate with 30 days written notice</li>
-              <li>No refunds are provided for partial months</li>
-            </ul>
-          </section>
+          <h2>4. Account Registration</h2>
+          <p>To use our services, you must:</p>
+          <ul>
+            <li>Be a business entity or authorized representative</li>
+            <li>Provide accurate business information</li>
+            <li>Maintain accurate account details</li>
+            <li>Protect account credentials</li>
+            <li>Operate a service business in the Twin Cities metro area</li>
+          </ul>
+          <p>
+            You are responsible for all activity under your account. Notify us immediately of any 
+            unauthorized access.
+          </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">5. Client Responsibilities</h2>
-            <p className="mb-4">You agree to:</p>
-            <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li>Provide accurate business information and access credentials</li>
-              <li>Maintain valid phone service and web properties</li>
-              <li>Respond to escalated emergencies in a timely manner</li>
-              <li>Ensure your use of our services complies with all applicable laws</li>
-              <li>Not use our services to send unsolicited or spam messages</li>
-            </ul>
-          </section>
+          <h2>5. Service Requirements</h2>
+          
+          <h3>Phone System Compatibility</h3>
+          <p>
+            Our services require integration with your phone system via call forwarding or SIP trunk. 
+            You are responsible for:
+          </p>
+          <ul>
+            <li>Providing necessary access for integration</li>
+            <li>Any carrier fees for call forwarding</li>
+            <li>Maintaining compatible phone infrastructure</li>
+          </ul>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">6. Compliance</h2>
-            <p className="mb-4">
-              Our services are designed to comply with applicable telecommunications regulations, including the Telephone Consumer Protection Act (TCPA). However, you are ultimately responsible for:
-            </p>
-            <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li>Obtaining appropriate consent from your customers</li>
-              <li>Maintaining records of consent</li>
-              <li>Honoring opt out requests</li>
-              <li>Complying with all applicable federal, state, and local laws</li>
-            </ul>
-          </section>
+          <h3>Configuration</h3>
+          <p>
+            You must provide configuration information including timeout thresholds, urgency keywords, 
+            qualification questions, and escalation rules. We will implement your configuration but you 
+            are responsible for the appropriateness of your settings.
+          </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">7. Limitation of Liability</h2>
-            <p className="mb-4">
-              To the maximum extent permitted by law:
-            </p>
-            <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li>Our services are provided &ldquo;as is&rdquo; without warranties of any kind</li>
-              <li>We are not liable for any indirect, incidental, special, or consequential damages</li>
-              <li>Our total liability shall not exceed the fees paid by you in the preceding 12 months</li>
-              <li>We are not responsible for lost leads due to technical issues beyond our reasonable control</li>
-            </ul>
-          </section>
+          <h2>6. Acceptable Use</h2>
+          <p>You agree not to:</p>
+          <ul>
+            <li>Use services for illegal purposes</li>
+            <li>Violate TCPA or other telecommunications regulations</li>
+            <li>Send spam or unsolicited messages through our system</li>
+            <li>Attempt to access systems beyond your authorized scope</li>
+            <li>Interfere with service operation or other users</li>
+            <li>Reverse engineer or copy our technology</li>
+          </ul>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">8. Indemnification</h2>
-            <p>
-              You agree to indemnify and hold harmless Hennepin Logic, its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of our services or violation of these terms.
-            </p>
-          </section>
+          <h2>7. Compliance Responsibilities</h2>
+          <p>
+            <strong>You are responsible for compliance</strong> with applicable laws including TCPA, state 
+            consumer protection laws, and industry regulations. Our services provide tools for automation, 
+            but you are responsible for:
+          </p>
+          <ul>
+            <li>Obtaining proper consent for SMS communications</li>
+            <li>Honoring opt-out requests</li>
+            <li>Maintaining required disclosures</li>
+            <li>Following industry-specific regulations for your business type</li>
+          </ul>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">9. Intellectual Property</h2>
-            <p>
-              All content, trademarks, and intellectual property related to our services remain the property of Hennepin Logic. You may not copy, modify, or distribute our materials without prior written consent.
-            </p>
-          </section>
+          <h2>8. Service Guarantees and Limitations</h2>
+          
+          <h3>Response Time</h3>
+          <p>
+            We target 60-second response time for automated SMS after missed call detection. This is a 
+            target, not a guarantee. Actual response time may vary based on phone system integration, 
+            network conditions, and carrier processing times.
+          </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">10. Termination</h2>
-            <p>
-              We reserve the right to suspend or terminate your access to our services at any time for violation of these terms or for any other reason at our sole discretion. Upon termination, your right to use our services will immediately cease.
-            </p>
-          </section>
+          <h3>Uptime</h3>
+          <p>
+            We strive for 99.5% uptime but do not guarantee uninterrupted service. Scheduled maintenance 
+            will be announced in advance when possible.
+          </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">11. Governing Law</h2>
-            <p>
-              These terms shall be governed by and construed in accordance with the laws of the State of Minnesota, without regard to its conflict of law provisions. Any disputes arising from these terms shall be resolved in the courts of Hennepin County, Minnesota.
-            </p>
-          </section>
+          <h3>Emergency Escalation</h3>
+          <p>
+            Keyword-based emergency detection is based on your configured triggers. We cannot guarantee 
+            detection of all urgent situations. You remain responsible for emergency response protocols.
+          </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">12. Changes to Terms</h2>
-            <p>
-              We may modify these terms at any time. We will notify you of material changes by posting the updated terms on our website. Your continued use of our services after such changes constitutes acceptance of the new terms.
-            </p>
-          </section>
+          <h2>9. Data Ownership and Usage</h2>
+          <p>
+            <strong>You own your lead data.</strong> We act as a data processor on your behalf. We may use 
+            aggregated, anonymized data for service improvement and analytics. See our Privacy Policy for 
+            detailed information handling practices.
+          </p>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-foreground mb-4">13. Contact Information</h2>
-            <p>
-              For questions about these terms, please contact us at:
-            </p>
-            <div className="mt-4 p-4 bg-muted rounded-lg">
-              <p><strong>Hennepin Logic</strong></p>
-              <p>Twin Cities metro</p>
-              <p>
-                Email:{' '}
-                <a href="mailto:sales@hennepinlogic.xyz" className="text-primary hover:underline">
-                  sales@hennepinlogic.xyz
-                </a>
-              </p>
-            </div>
-          </section>
+          <h2>10. Fees and Payment</h2>
+          <ul>
+            <li>Pricing based on selected tier and lead volume</li>
+            <li>Monthly billing unless annual contract selected</li>
+            <li>Charges processed automatically via provided payment method</li>
+            <li>Late payments may result in service suspension</li>
+            <li>Fees subject to change with 30 days notice</li>
+          </ul>
+
+          <h2>11. Trial Period</h2>
+          <p>
+            New customers typically receive a 30-day trial period. Trial terms will be specified during 
+            signup. Either party may terminate during the trial without penalty.
+          </p>
+
+          <h2>12. Service Modifications</h2>
+          <p>
+            We may modify, suspend, or discontinue services at any time. We will provide reasonable notice 
+            of significant changes. Continued use after changes constitutes acceptance.
+          </p>
+
+          <h2>13. Termination</h2>
+          
+          <h3>By You</h3>
+          <p>
+            Cancel anytime with 30 days notice. You will be charged for the notice period. Upon cancellation, 
+            you may export your data. Data is retained for 90 days post-cancellation, then permanently deleted.
+          </p>
+
+          <h3>By Us</h3>
+          <p>We may terminate or suspend services immediately if you:</p>
+          <ul>
+            <li>Violate these Terms</li>
+            <li>Fail to pay fees</li>
+            <li>Engage in fraudulent or illegal activity</li>
+            <li>Abuse system resources</li>
+          </ul>
+
+          <h2>14. Limitation of Liability</h2>
+          <p>
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, HENNEPIN LOGIC SHALL NOT BE LIABLE FOR ANY INDIRECT, 
+            INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, 
+            WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE 
+            LOSSES RESULTING FROM:
+          </p>
+          <ul>
+            <li>Use or inability to use services</li>
+            <li>Missed leads or delayed responses</li>
+            <li>Errors in emergency escalation</li>
+            <li>Unauthorized access to your data</li>
+            <li>System downtime or interruptions</li>
+          </ul>
+          <p>
+            OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID IN THE 12 MONTHS PRECEDING THE CLAIM.
+          </p>
+
+          <h2>15. Disclaimer of Warranties</h2>
+          <p>
+            SERVICES ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, 
+            EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, 
+            OR NON-INFRINGEMENT.
+          </p>
+
+          <h2>16. Indemnification</h2>
+          <p>
+            You agree to indemnify and hold harmless Hennepin Logic from claims arising from your use of 
+            services, violation of these Terms, or violation of any rights of third parties.
+          </p>
+
+          <h2>17. Geographic Limitation</h2>
+          <p>
+            Services are designed for businesses operating in the Twin Cities metropolitan area. We reserve 
+            the right to limit service to this geographic region.
+          </p>
+
+          <h2>18. Changes to Terms</h2>
+          <p>
+            We may revise these Terms at any time. Material changes will be notified via email or dashboard 
+            notification. Continued use after changes constitutes acceptance.
+          </p>
+
+          <h2>19. Governing Law</h2>
+          <p>
+            These Terms are governed by the laws of the State of Minnesota, without regard to conflict of 
+            law principles. Disputes shall be resolved in courts located in Hennepin County, Minnesota.
+          </p>
+
+          <h2>20. Contact Information</h2>
+          <p>Questions about these Terms? Contact us:</p>
+          <ul>
+            <li>Email: legal@hennepinlogic.com</li>
+            <li>Mail: Hennepin Logic, Minneapolis, MN</li>
+          </ul>
+
+          <hr className="my-8" />
+
+          <p className="text-sm text-slate-600">
+            By using Hennepin Logic services, you acknowledge that you have read, understood, and agree 
+            to be bound by these Terms of Service.
+          </p>
         </div>
       </div>
-    </div>
-  );
+    </section>
+  )
 }

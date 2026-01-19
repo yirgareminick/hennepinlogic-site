@@ -1,231 +1,307 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { CTA } from "@/components";
+import type { Metadata } from 'next'
+import CTAButton from '@/components/CTAButton'
+import { FiMapPin, FiClock, FiUsers, FiTrendingUp } from 'react-icons/fi'
 
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Hennepin Logic is a Minneapolis based automation company focused on lead response systems for local service businesses.",
+  title: 'About | Hennepin Logic - Minneapolis-Based Lead Response Automation',
+  description: 'Learn about Hennepin Logic, a Minneapolis-based company providing automated lead response infrastructure for Twin Cities service businesses. Local focus, technical expertise.',
   openGraph: {
-    title: "About | Hennepin Logic",
-    description:
-      "Minneapolis based automation company focused on lead response systems.",
+    title: 'About | Hennepin Logic',
+    description: 'Minneapolis-based automated lead response infrastructure for Twin Cities service businesses.',
   },
-};
+}
 
-export default function AboutPage() {
+export default function About() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-fade opacity-30" />
-        <div className="absolute inset-0 bg-radial-top" />
-        
-        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            About Hennepin Logic
-          </h1>
-          <p className="text-lg text-foreground-muted">
-            We build automated lead response infrastructure for Minneapolis service 
-            companies. That&apos;s the entire focus.
-          </p>
+      <section className="section-padding bg-slate-900 text-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+              Built for Twin Cities Service Businesses
+            </h1>
+            <p className="text-xl text-slate-300">
+              We&apos;re based in Minneapolis. We understand how local service businesses operate, 
+              how Minnesota weather impacts demand, and what it takes to compete in the Twin Cities market.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* The approach */}
-      <section className="py-14">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-invert max-w-none">
-            <h2 className="text-2xl font-bold text-foreground mb-4">The approach</h2>
-            <div className="space-y-4 text-foreground-muted">
-              <p>
-                Plumbing and restoration companies have a specific problem: leads come in 
-                at all hours, and the first business to respond usually wins the job. This 
-                isn&apos;t a marketing problem. It&apos;s an operations problem.
+      {/* The Problem We Solve */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-6 text-center">
+              Why We Built This
+            </h2>
+            <div className="prose prose-lg max-w-none text-slate-700">
+              <p className="text-xl mb-6">
+                Service businesses face a simple but critical problem: leads come in at all hours, 
+                and the first business to respond usually wins the job. This isn&apos;t a marketing problem. 
+                It&apos;s an operations problem.
               </p>
-              <p>
-                We built a system that handles the operational side of lead response. It 
-                monitors your inbound channels, responds within 60 seconds, captures the 
-                information you need, and escalates emergencies to the right person.
+              
+              <p className="mb-6">
+                We watched Twin Cities HVAC companies, plumbers, electricians, and other service businesses 
+                lose work because they couldn&apos;t answer calls during busy periods. They were out doing the work—
+                fixing furnaces, unclogging drains, wiring installations. Meanwhile, potential customers 
+                were calling, getting no answer, and moving to the next business on their list.
               </p>
+
+              <p className="mb-6">
+                The solutions we saw didn&apos;t fit the problem. CRMs tried to manage the entire customer lifecycle. 
+                Marketing agencies promised more leads (when businesses already had more leads than they could handle). 
+                Answering services added cost and complexity with human operators who couldn&apos;t integrate with 
+                existing systems.
+              </p>
+
+              <p className="mb-6">
+                What was missing was simple: automated infrastructure that sits between lead sources and teams. 
+                Something that monitors inbound channels, responds within 60 seconds, captures information, 
+                and escalates emergencies. Not a full CRM. Not a marketing agency. Not a call center. 
+                Just reliable lead response automation.
+              </p>
+
               <p>
-                We&apos;re not a CRM, not a marketing agency, not an answering service. We&apos;re 
-                automated infrastructure that sits between your lead sources and your team.
+                That&apos;s what Hennepin Logic does. Nothing more, nothing less.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Minneapolis */}
-      <section className="py-14 bg-muted/30">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">Why Minneapolis focus</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4 text-foreground-muted">
-              <p>
-                We&apos;re based in Minneapolis. Working with local companies means we know the market, 
-                understand local demand swings, and align support around Twin Cities business hours.
-              </p>
-              <p>
-                It also means we understand the seasonal patterns, frozen pipes in January, 
-                spring flooding, the water heater replacement surge in fall. These patterns 
-                affect how the system should be configured.
-              </p>
-            </div>
-            <div className="card-tech rounded-xl p-6">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="font-semibold text-foreground">Service area</h3>
-                <span className="text-xs text-foreground-muted terminal-text">Twin Cities</span>
+      {/* Local Focus */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-12 text-center">
+              Why Local Focus Matters
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                  <FiMapPin className="text-primary-600 text-2xl" />
+                  <h3 className="text-xl font-heading font-bold text-slate-900">
+                    Minneapolis Market Knowledge
+                  </h3>
+                </div>
+                <p className="text-slate-600">
+                  We understand the Twin Cities service business landscape. From Edina to Eden Prairie, 
+                  Maple Grove to Burnsville, we know how local businesses operate and what they need.
+                </p>
               </div>
-              <div className="flex flex-wrap gap-2">
+
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                  <FiClock className="text-primary-600 text-2xl" />
+                  <h3 className="text-xl font-heading font-bold text-slate-900">
+                    Seasonal Demand Patterns
+                  </h3>
+                </div>
+                <p className="text-slate-600">
+                  Minnesota weather creates predictable demand swings. Furnace calls spike in January. 
+                  AC calls surge in July. Roofing season is compressed. We get it.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                  <FiUsers className="text-primary-600 text-2xl" />
+                  <h3 className="text-xl font-heading font-bold text-slate-900">
+                    Local Support Hours
+                  </h3>
+                </div>
+                <p className="text-slate-600">
+                  Support aligned around Twin Cities business hours. Central time zone. 
+                  We&apos;re here when you need us, not working off a script from across the country.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="flex items-center gap-3 mb-4">
+                  <FiTrendingUp className="text-primary-600 text-2xl" />
+                  <h3 className="text-xl font-heading font-bold text-slate-900">
+                    Growth Without Complexity
+                  </h3>
+                </div>
+                <p className="text-slate-600">
+                  We help local businesses scale operations without adding layers of complexity. 
+                  More leads handled, same small team structure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Area */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-8 text-center">
+              Twin Cities Metro Coverage
+            </h2>
+            <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+              We focus exclusively on the Minneapolis/St. Paul metropolitan area. 
+              This isn&apos;t limiting—it&apos;s intentional. Deep local knowledge beats shallow national presence.
+            </p>
+
+            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl p-8 border-2 border-primary-200">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                 {[
-                  "Minneapolis",
-                  "St. Paul",
-                  "Bloomington",
-                  "Edina",
-                  "Eden Prairie",
-                  "Plymouth",
-                  "Maple Grove",
-                  "Brooklyn Park",
-                  "Burnsville",
-                  "Eagan",
-                ].map((city, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 rounded-full bg-muted border border-border text-sm text-foreground-muted"
-                  >
+                  'Minneapolis',
+                  'St. Paul',
+                  'Bloomington',
+                  'Edina',
+                  'Eden Prairie',
+                  'Plymouth',
+                  'Maple Grove',
+                  'Brooklyn Park',
+                  'Burnsville',
+                  'Eagan',
+                  'Minnetonka',
+                  'Lakeville',
+                  'Woodbury',
+                  'Blaine',
+                  'Coon Rapids',
+                ].map((city) => (
+                  <div key={city} className="bg-white rounded-lg p-3 text-center font-semibold text-slate-700">
                     {city}
-                  </span>
+                  </div>
                 ))}
-                <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
-                  + Twin Cities metro
-                </span>
+              </div>
+              <p className="text-center text-slate-600">
+                Plus surrounding communities throughout the seven-county metro area.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Approach */}
+      <section className="section-padding bg-slate-900 text-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold mb-8 text-center">
+              Our Approach
+            </h2>
+
+            <div className="space-y-6">
+              <div className="bg-slate-800 rounded-lg p-6">
+                <h3 className="text-xl font-heading font-bold mb-3">No Hype</h3>
+                <p className="text-slate-300">
+                  We don&apos;t promise to &quot;revolutionize&quot; your business or &quot;10x your revenue.&quot; 
+                  We provide infrastructure that responds to missed calls and web leads within 60 seconds. 
+                  That&apos;s the value. Everything else is marketing fluff.
+                </p>
+              </div>
+
+              <div className="bg-slate-800 rounded-lg p-6">
+                <h3 className="text-xl font-heading font-bold mb-3">Technical Credibility</h3>
+                <p className="text-slate-300">
+                  We&apos;re transparent about how the system works. Phone integration methods, 
+                  response time capabilities, data handling, emergency escalation protocols. 
+                  If you want technical details, we provide them.
+                </p>
+              </div>
+
+              <div className="bg-slate-800 rounded-lg p-6">
+                <h3 className="text-xl font-heading font-bold mb-3">Practical Solutions</h3>
+                <p className="text-slate-300">
+                  Three tiers because businesses have different needs and comfort levels with automation. 
+                  Start small with Tier 1, scale to Tier 3 when ready. Configure it to match your operations, 
+                  not force your operations to match the system.
+                </p>
+              </div>
+
+              <div className="bg-slate-800 rounded-lg p-6">
+                <h3 className="text-xl font-heading font-bold mb-3">Local Commitment</h3>
+                <p className="text-slate-300">
+                  We focus on the Twin Cities because depth beats breadth. Understanding local service business 
+                  dynamics, seasonal patterns, and market conditions helps us build better solutions.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why plumbing and restoration */}
-      <section className="py-14">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">Why plumbing and restoration</h2>
-          <div className="space-y-4 text-foreground-muted mb-6">
-            <p>
-              These industries have specific characteristics that make speed to lead 
-              especially critical:
+      {/* Who We Work With */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-slate-900 mb-8 text-center">
+              Service Businesses We Work With
+            </h2>
+            <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+              Any service business that gets leads via phone calls or web forms and needs rapid response capability.
             </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              {
-                title: "Emergency driven",
-                description: "A burst pipe or flooded basement isn't a comparison shopping situation. Customers call down their list until someone answers.",
-              },
-              {
-                title: "High job value",
-                description: "Average emergency plumbing call: $400 to $800. Average restoration job: $2,500 to $8,000. Missed calls have real revenue impact.",
-              },
-              {
-                title: "24/7 nature",
-                description: "Emergencies happen at 2 AM. You can't be awake all the time, but an automated system can.",
-              },
-              {
-                title: "Field based work",
-                description: "Your team is on job sites, not at desks. Missed calls pile up while everyone's working.",
-              },
-            ].map((item, index) => (
-              <div key={index} className="card-tech rounded-lg p-5">
-                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-foreground-muted">{item.description}</p>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-slate-50 rounded-lg p-6">
+                <h3 className="font-heading font-bold text-slate-900 mb-3">Home Services</h3>
+                <ul className="space-y-2 text-slate-600">
+                  <li>• HVAC</li>
+                  <li>• Plumbing</li>
+                  <li>• Electrical</li>
+                  <li>• Roofing</li>
+                  <li>• Garage Door</li>
+                </ul>
               </div>
-            ))}
+
+              <div className="bg-slate-50 rounded-lg p-6">
+                <h3 className="font-heading font-bold text-slate-900 mb-3">Property Services</h3>
+                <ul className="space-y-2 text-slate-600">
+                  <li>• Landscaping</li>
+                  <li>• Snow Removal</li>
+                  <li>• Junk Removal</li>
+                  <li>• Cleaning Services</li>
+                  <li>• Property Management</li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-50 rounded-lg p-6">
+                <h3 className="font-heading font-bold text-slate-900 mb-3">Specialty Services</h3>
+                <ul className="space-y-2 text-slate-600">
+                  <li>• Pest Control</li>
+                  <li>• Locksmith</li>
+                  <li>• Appliance Repair</li>
+                  <li>• Restoration</li>
+                  <li>• Contractors</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-center text-slate-600 mt-8">
+              If your business depends on rapid response to inbound leads, this infrastructure works for you.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Values / how we work */}
-      <section className="py-14 bg-muted/30">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">How we work</h2>
-          <div className="space-y-4">
-            {[
-              {
-                title: "Direct communication",
-                description: "No account managers or support tickets. You talk to the people who built and maintain the system.",
-              },
-              {
-                title: "Transparent pricing",
-                description: "Pilot program is $950. Monthly service is $1,500 to $2,500 depending on complexity. No hidden fees or usage based surprises.",
-              },
-              {
-                title: "We do the setup",
-                description: "You provide access credentials. We configure everything. Technical implementation isn't your problem.",
-              },
-              {
-                title: "Measurable results",
-                description: "Weekly reports with actual data. Response times, lead volume, escalation events. You can evaluate objectively.",
-              },
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                  <p className="text-sm text-foreground-muted">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact info */}
-      <section className="py-14">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card-tech rounded-xl p-6 text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Get in touch</h2>
-            <p className="text-foreground-muted mb-6">
-              Questions about whether the system would work for your operation? 
-              Reach out directly.
+      {/* CTA */}
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-6">
+              Ready to Learn More?
+            </h2>
+            <p className="text-xl text-slate-600 mb-8">
+              Schedule a demo to see how the system works with your specific business setup. 
+              We&apos;ll discuss phone integration, configuration options, and answer your technical questions.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="mailto:sales@hennepinlogic.xyz"
-                className="text-primary hover:underline"
-              >
-                sales@hennepinlogic.xyz
-              </a>
-              <span className="hidden sm:inline text-foreground-muted">•</span>
-              <a
-                href="tel:+16125551234"
-                className="text-primary hover:underline"
-              >
-                (612) 695-1337
-              </a>
-              <span className="hidden sm:inline text-foreground-muted">•</span>
-              <Link
-                href="https://calendly.com/hennepinlogic-sales"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                Schedule a call
-              </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTAButton>Schedule Demo</CTAButton>
+              <CTAButton href="/how-it-works" external={false} variant="secondary">
+                How It Works
+              </CTAButton>
             </div>
           </div>
         </div>
       </section>
-
-      <CTA
-        title="Ready to see how it works?"
-        description="15 minute call to discuss your operation and whether the system makes sense."
-        variant="minimal"
-      />
     </>
-  );
+  )
 }

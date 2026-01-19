@@ -1,0 +1,68 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Hennepin Logic",
+  "description": "Automated lead response infrastructure for service businesses in the Twin Cities metropolitan area",
+  "url": "https://hennepinlogic.com",
+  "logo": "https://hennepinlogic.com/logo.png",
+  "image": "https://hennepinlogic.com/og-image.png",
+  "telephone": "",
+  "email": "info@hennepinlogic.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Minneapolis",
+    "addressRegion": "MN",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Minneapolis"
+    },
+    {
+      "@type": "City",
+      "name": "St. Paul"
+    },
+    {
+      "@type": "City",
+      "name": "Bloomington"
+    },
+    {
+      "@type": "City",
+      "name": "Edina"
+    },
+    {
+      "@type": "City",
+      "name": "Eden Prairie"
+    },
+    {
+      "@type": "City",
+      "name": "Plymouth"
+    },
+    {
+      "@type": "City",
+      "name": "Maple Grove"
+    },
+    {
+      "@type": "City",
+      "name": "Brooklyn Park"
+    },
+    {
+      "@type": "City",
+      "name": "Burnsville"
+    },
+    {
+      "@type": "City",
+      "name": "Eagan"
+    }
+  ],
+  "serviceType": [
+    "Automated Lead Response",
+    "Call Monitoring",
+    "SMS Response Automation",
+    "Lead Qualification",
+    "Emergency Escalation"
+  ],
+  "priceRange": "$$",
+  "sameAs": []
+}

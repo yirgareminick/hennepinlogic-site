@@ -1,150 +1,105 @@
-import Image from "next/image";
-import Link from "next/link";
+import Link from 'next/link'
+import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi'
 
-const navigation = {
-  product: [
-    { name: "How It Works", href: "/how-it-works" },
-    { name: "Pilot Program", href: "/pilot" },
-    { name: "For Plumbers", href: "/plumbing" },
-    { name: "For Restoration", href: "/restoration" },
-  ],
-  company: [
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ],
-  legal: [
-    { name: "Privacy", href: "/privacy" },
-    { name: "Terms", href: "/terms" },
-  ],
-};
+export default function Footer() {
+  const cities = [
+    'Minneapolis', 'St. Paul', 'Bloomington', 'Edina', 'Eden Prairie',
+    'Plymouth', 'Maple Grove', 'Brooklyn Park', 'Burnsville', 'Eagan'
+  ]
 
-export function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="relative w-9 h-9">
-                <Image
-                  src="/hl-logo.png"
-                  alt="Hennepin Logic"
-                  width={36}
-                  height={36}
-                  className="h-9 w-9 rounded object-cover"
-                />
-              </div>
-              <span className="font-semibold text-foreground text-lg">
-                Hennepin Logic
-              </span>
-            </Link>
-            <p className="text-sm text-foreground-muted mb-4 max-w-xs">
-              Automated lead response infrastructure for Twin Cities plumbing and restoration companies.
+    <footer className="bg-slate-900 text-slate-300">
+      <div className="container-custom py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <h3 className="text-2xl font-heading font-bold text-white mb-4">
+              Hennepin Logic
+            </h3>
+            <p className="text-slate-400 mb-6 max-w-md">
+              Automated lead response infrastructure for service businesses in the Twin Cities metro area. 
+              Minneapolis-based, locally focused.
             </p>
-            <div className="flex items-center gap-2 text-sm text-foreground-muted">
-              <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              Twin Cities metro
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <FiMapPin className="text-primary-400 flex-shrink-0" />
+                <span>Minneapolis, Minnesota</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <FiPhone className="text-primary-400 flex-shrink-0" />
+                <span>Service Area: Twin Cities Metro</span>
+              </div>
             </div>
           </div>
 
-          {/* Product links */}
+          {/* Quick Links */}
           <div>
-            <h4 className="font-medium text-foreground mb-4">Product</h4>
-            <ul className="space-y-3">
-              {navigation.product.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-foreground-muted hover:text-primary transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company links */}
-          <div>
-            <h4 className="font-medium text-foreground mb-4">Company</h4>
-            <ul className="space-y-3">
-              {navigation.company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-foreground-muted hover:text-primary transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-medium text-foreground mb-4">Contact</h4>
-            <ul className="space-y-3">
+            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
               <li>
-                <a
-                  href="mailto:sales@hennepinlogic.xyz"
-                  className="text-sm text-foreground-muted hover:text-primary transition-colors"
-                >
-                  sales@hennepinlogic.xyz
-                </a>
+                <Link href="/how-it-works" className="hover:text-primary-400 transition-colors">
+                  How It Works
+                </Link>
               </li>
               <li>
-                <a
-                  href="tel:+16125551234"
-                  className="text-sm text-foreground-muted hover:text-primary transition-colors"
-                >
-                  (612) 695-1337
-                </a>
+                <Link href="/about" className="hover:text-primary-400 transition-colors">
+                  About
+                </Link>
               </li>
               <li>
-                <a
+                <Link href="/contact" className="hover:text-primary-400 transition-colors">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="https://calendly.com/hennepinlogic-sales"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-foreground-muted hover:text-primary transition-colors inline-flex items-center gap-1"
+                  className="hover:text-primary-400 transition-colors"
                 >
                   Schedule Demo
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/privacy" className="hover:text-primary-400 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-primary-400 transition-colors">
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="text-sm text-foreground-muted">
-              © {new Date().getFullYear()} Hennepin Logic. All rights reserved.
-            </p>
-            <div className="flex items-center gap-4 text-sm text-foreground-muted">
-              {navigation.legal.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="hover:text-primary transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+        {/* Service Area */}
+        <div className="mt-12 pt-8 border-t border-slate-800">
+          <h4 className="text-white font-semibold mb-4">Twin Cities Service Area</h4>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-400">
+            {cities.map((city, index) => (
+              <span key={city}>
+                {city}
+                {index < cities.length - 1 && <span className="ml-4 text-slate-700">|</span>}
+              </span>
+            ))}
           </div>
-          <p className="text-xs text-foreground-muted mt-4">
-            All automated messaging follows TCPA guidelines. Opt out instructions included in every message.
-          </p>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+          <p>&copy; {new Date().getFullYear()} Hennepin Logic. All rights reserved.</p>
         </div>
       </div>
     </footer>
-  );
+  )
 }
