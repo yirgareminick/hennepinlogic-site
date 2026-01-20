@@ -18,7 +18,12 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center gap-3">
+            <img
+              src="/favicon.svg"
+              alt="Hennepin Logic"
+              className="h-8 w-8"
+            />
             <span className="text-2xl md:text-3xl font-heading font-bold text-primary-600">
               Hennepin Logic
             </span>
