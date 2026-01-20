@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import CTAButton from '@/components/CTAButton'
 import { FiMapPin, FiClock, FiMail, FiCalendar } from 'react-icons/fi'
 
@@ -71,7 +72,7 @@ export default function Contact() {
                       Business Hours
                     </h3>
                     <ul className="space-y-1 text-slate-600">
-                      <li>Monday - Friday: 8:00 AM - 5:00 PM CT</li>
+                      <li>Monday - Friday: 9:00 AM - 3:00 PM CT</li>
                       <li>Demos available within business hours</li>
                       <li>Emergency support line for active clients</li>
                     </ul>
@@ -118,16 +119,15 @@ export default function Contact() {
                 </h3>
                 
                 {/* Calendly Inline Widget */}
-                <div className="calendly-inline-widget min-h-[600px]" 
+                <div className="calendly-inline-widget w-full h-[720px]" 
                      data-url="https://calendly.com/hennepinlogic-sales?hide_gdpr_banner=1&primary_color=0284c7"
                 >
                 </div>
                 
                 {/* Calendly Script */}
-                <script 
-                  type="text/javascript" 
-                  src="https://assets.calendly.com/assets/external/widget.js" 
-                  async
+                <Script
+                  src="https://assets.calendly.com/assets/external/widget.js"
+                  strategy="afterInteractive"
                 />
 
                 <p className="text-sm text-slate-500 text-center mt-4">
@@ -160,10 +160,10 @@ export default function Contact() {
                   We&apos;ll respond within one business day.
                 </p>
                 <a 
-                  href="mailto:info@hennepinlogic.com"
+                  href="mailto:admin@hennepinlogic.xyz"
                   className="text-primary-600 font-semibold hover:text-primary-700"
                 >
-                  info@hennepinlogic.com
+                  admin@hennepinlogic.xyz
                 </a>
               </div>
 

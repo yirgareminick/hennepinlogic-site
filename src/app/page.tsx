@@ -29,7 +29,7 @@ export default function Home() {
                   href="/how-it-works" 
                   external={false}
                   variant="secondary"
-                  className="border-white text-white hover:bg-white/10"
+                  className="border-white text-white bg-transparent hover:bg-white/10"
                 >
                   How It Works
                 </CTAButton>

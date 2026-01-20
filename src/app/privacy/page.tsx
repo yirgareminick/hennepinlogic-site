@@ -150,7 +150,7 @@ export default function Privacy() {
           <h2>Contact Us</h2>
           <p>Questions about this Privacy Policy? Contact us:</p>
           <ul>
-            <li>Email: privacy@hennepinlogic.com</li>
+            <li>Email: admin@hennepinlogic.xyz</li>
             <li>Mail: Hennepin Logic, Minneapolis, MN</li>
           </ul>
 

@@ -225,7 +225,7 @@ export default function Terms() {
           <h2>20. Contact Information</h2>
           <p>Questions about these Terms? Contact us:</p>
           <ul>
-            <li>Email: legal@hennepinlogic.com</li>
+            <li>Email: admin@hennepinlogic.xyz</li>
             <li>Mail: Hennepin Logic, Minneapolis, MN</li>
           </ul>
 
