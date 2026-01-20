@@ -17,8 +17,8 @@ export default function Footer() {
               Hennepin Logic
             </h3>
             <p className="text-slate-400 mb-6 max-w-md">
-              Automated lead response infrastructure for service businesses in the Twin Cities metro area. 
-              Minneapolis-based, locally focused.
+              Automated lead response infrastructure for service businesses. 
+              Built for teams that want faster responses and cleaner handoffs.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
@@ -27,7 +27,15 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <FiPhone className="text-primary-400 flex-shrink-0" />
-                <span>Service Area: Twin Cities Metro</span>
+                <a className="hover:text-primary-300 transition-colors" href="tel:16126951337">
+                  (612) 695-1337
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <FiMail className="text-primary-400 flex-shrink-0" />
+                <a className="hover:text-primary-300 transition-colors" href="mailto:sales@hennepinlogic.xyz">
+                  sales@hennepinlogic.xyz
+                </a>
               </div>
             </div>
           </div>

@@ -271,7 +271,9 @@ export function PhoneMockup({
       `}</style>
       
       {/* Phone frame */}
-      <div className="relative w-[280px] h-[580px] bg-gradient-to-b from-white/10 via-black/40 to-black/90 rounded-[3rem] p-2 shadow-[0_25px_90px_rgba(15,23,42,0.55)] border border-blue-500/30 ring-1 ring-blue-500/15 transition duration-500 transform-gpu hover:scale-[0.995] opacity-95">
+      <div className="relative w-[280px] h-[580px] bg-gradient-to-b from-black/75 via-black/70 to-black/82 rounded-[3rem] p-2 shadow-[0_25px_90px_rgba(15,23,42,0.55)] border border-blue-500/20 ring-1 ring-blue-500/10 transition duration-500 transform-gpu hover:scale-[0.995] opacity-95">
+        <div className="absolute inset-[3px] rounded-[2.75rem] bg-gradient-to-b from-white/22 via-white/8 to-transparent pointer-events-none" />
+        <div className="absolute inset-[6px] rounded-[2.6rem] ring-1 ring-white/12 pointer-events-none" />
         {/* Inner screen */}
         <div className="relative w-full h-full bg-[#0a0e14] rounded-[2.5rem] overflow-hidden">
           {/* Dynamic Island */}

@@ -9,29 +9,34 @@ export default function Home() {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-primary-600 to-primary-800 text-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
-              Every Lead Answered Within 60 Seconds
-            </h1>
-            <p className="text-xl md:text-2xl mb-4 text-primary-50">
-              Automated lead response infrastructure for Twin Cities service businesses.
-            </p>
-            <p className="text-lg mb-8 text-primary-100">
-              Missed calls and web forms get instant responses. Emergencies escalated immediately. 
-              Your team focuses on service delivery, not phone duty.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton variant="secondary" className="bg-white text-primary-600 hover:bg-primary-50">
-                Schedule Demo
-              </CTAButton>
-              <CTAButton 
-                href="/how-it-works" 
-                external={false}
-                variant="secondary"
-                className="border-white text-white hover:bg-white/10"
-              >
-                How It Works
-              </CTAButton>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
+                Every Lead Answered Within 60 Seconds
+              </h1>
+              <p className="text-xl md:text-2xl mb-4 text-primary-50">
+                Automated lead response infrastructure for Twin Cities service businesses.
+              </p>
+              <p className="text-lg mb-8 text-primary-100">
+                Missed calls and web forms get instant responses. Emergencies escalated immediately. 
+                Your team focuses on service delivery, not phone duty.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <CTAButton variant="secondary" className="bg-white text-primary-600 hover:bg-primary-50">
+                  Schedule Demo
+                </CTAButton>
+                <CTAButton 
+                  href="/how-it-works" 
+                  external={false}
+                  variant="secondary"
+                  className="border-white text-white hover:bg-white/10"
+                >
+                  How It Works
+                </CTAButton>
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-end lg:-translate-x-10">
+              <PhoneMockup businessName="Hennepin Logic" />
             </div>
           </div>
         </div>
@@ -107,20 +112,13 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Phone Demo + Process */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Phone Mockup */}
-            <div className="flex justify-center lg:justify-end">
-              <PhoneMockup businessName="Hennepin Logic" />
-            </div>
-
-            {/* Process Steps */}
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold">
-                  1
-                </div>
-                <div>
+          {/* Process Steps */}
+          <div className="max-w-3xl mx-auto space-y-6 mb-16">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold">
+                1
+              </div>
+              <div>
                   <h3 className="text-lg font-heading font-bold text-slate-900 mb-2">
                     Call Comes In
                   </h3>
@@ -177,7 +175,6 @@ export default function Home() {
                   See Detailed System Explanation
                 </CTAButton>
               </div>
-            </div>
           </div>
         </div>
       </section>
