@@ -35,7 +35,7 @@ export default function Home() {
                 </CTAButton>
               </div>
             </div>
-            <div className="flex justify-center lg:justify-end lg:-translate-x-10">
+            <div className="flex justify-center lg:justify-end lg:-translate-x-12">
               <PhoneMockup businessName="Hennepin Logic" />
             </div>
           </div>

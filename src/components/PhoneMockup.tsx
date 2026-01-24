@@ -245,9 +245,9 @@ export function PhoneMockup({
 
   return (
     <div className="relative">
-      <div className="absolute inset-0 -z-10 opacity-70">
-        <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-blue-500/30 via-transparent to-black/40 blur-[70px]" />
-        <div className="absolute inset-6 rounded-[2.5rem] border border-white/5 shadow-[0_20px_60px_rgba(2,6,23,0.9)]" />
+      <div className="absolute inset-0 -z-10 opacity-85">
+        <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-blue-500/45 via-blue-500/10 to-black/60 blur-[85px]" />
+        <div className="absolute inset-6 rounded-[2.5rem] border border-white/8 shadow-[0_30px_80px_rgba(2,6,23,0.95)]" />
       </div>
       <style jsx>{`
         @keyframes typing-dot {
@@ -271,9 +271,9 @@ export function PhoneMockup({
       `}</style>
       
       {/* Phone frame */}
-      <div className="relative w-[280px] h-[580px] bg-gradient-to-b from-slate-700/60 via-slate-900/70 to-black/90 rounded-[3rem] p-[10px] shadow-[0_25px_90px_rgba(15,23,42,0.55)] border border-white/12 ring-1 ring-white/10 transition duration-500 transform-gpu hover:scale-[0.995] opacity-95">
-        <div className="absolute inset-[3px] rounded-[2.75rem] bg-gradient-to-b from-white/28 via-white/12 to-transparent pointer-events-none" />
-        <div className="absolute inset-[6px] rounded-[2.6rem] bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+      <div className="relative w-[300px] h-[610px] bg-gradient-to-b from-slate-800/70 via-slate-900/80 to-black/90 rounded-[3rem] p-[10px] shadow-[0_25px_90px_rgba(15,23,42,0.55)] border border-white/10 ring-1 ring-white/8 transition duration-500 transform-gpu hover:scale-[0.995] opacity-95">
+        <div className="absolute inset-[3px] rounded-[2.75rem] bg-gradient-to-b from-white/22 via-white/12 to-transparent pointer-events-none" />
+        <div className="absolute inset-[6px] rounded-[2.6rem] bg-gradient-to-b from-white/6 to-transparent pointer-events-none" />
         {/* Inner screen */}
         <div className="relative w-full h-full bg-[#F2F2F7] rounded-[2.5rem] overflow-hidden">
           {/* Dynamic Island */}
