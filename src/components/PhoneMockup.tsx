@@ -290,8 +290,7 @@ export function PhoneMockup({
             </div>
           </div>
           
-          {/* Fade overlay at top of screen */}
-          <div className="absolute top-12 left-0 right-0 h-8 bg-gradient-to-b from-[#F2F2F7] to-transparent pointer-events-none z-15" />
+          
           
           {/* Chat header */}
           <div className="absolute top-12 left-0 right-0 h-14 bg-white/95 backdrop-blur-sm border-b border-slate-200/80 flex items-center px-4 z-20">
@@ -309,8 +308,7 @@ export function PhoneMockup({
             </div>
           </div>
           
-          {/* Fade overlay at top of messages */}
-          <div className="absolute top-[6.5rem] left-0 right-0 h-12 bg-gradient-to-b from-[#F2F2F7] via-[#F2F2F7]/80 to-transparent pointer-events-none z-10" />
+          
           
           {/* Messages container */}
           <div 
